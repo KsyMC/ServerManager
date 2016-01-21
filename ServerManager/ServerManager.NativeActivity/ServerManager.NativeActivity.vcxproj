@@ -1,0 +1,445 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x86">
+      <Configuration>Debug</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x86">
+      <Configuration>Release</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1cf3bec6-7bac-4062-bcc8-ffa99359bfdd}</ProjectGuid>
+    <Keyword>Android</Keyword>
+    <RootNamespace>ServerManager</RootNamespace>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <ApplicationType>Android</ApplicationType>
+    <ApplicationTypeRevision>1.0</ApplicationTypeRevision>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>Clang_3_6</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>Clang_3_6</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>Clang_3_6</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>Clang_3_6</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>Clang_3_6</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>Clang_3_6</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>Gcc_4_9</PlatformToolset>
+    <AndroidAPILevel>android-14</AndroidAPILevel>
+    <UseOfStl>gnustl_shared</UseOfStl>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>Clang_3_6</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <TargetName>libcom.ksymc.servermanager</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <Link>
+      <LibraryDependencies>%(LibraryDependencies);GLESv1_CM;EGL;</LibraryDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <Link>
+      <LibraryDependencies>%(LibraryDependencies);GLESv1_CM;EGL;</LibraryDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <AdditionalIncludeDirectories>C:\workspace\Android\MCPE\include;C:\workspace\Android\curl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CppLanguageStandard>c++11</CppLanguageStandard>
+    </ClCompile>
+    <Link>
+      <LibraryDependencies>%(LibraryDependencies);minecraftpe;mcpelauncher_tinysubstrate;z;curl;crypto;ssl</LibraryDependencies>
+      <AdditionalLibraryDirectories>C:\workspace\Android\MCPE\lib;C:\workspace\Android\curl\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <Link>
+      <LibraryDependencies>%(LibraryDependencies);GLESv1_CM;EGL;</LibraryDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <Link>
+      <LibraryDependencies>%(LibraryDependencies);GLESv1_CM;EGL;</LibraryDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <Link>
+      <LibraryDependencies>%(LibraryDependencies);GLESv1_CM;EGL;</LibraryDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <Link>
+      <LibraryDependencies>%(LibraryDependencies);GLESv1_CM;EGL;</LibraryDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <Link>
+      <LibraryDependencies>%(LibraryDependencies);GLESv1_CM;EGL;</LibraryDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="hook\hook.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="servermanager\BanEntry.cpp" />
+    <ClCompile Include="servermanager\BanList.cpp" />
+    <ClCompile Include="servermanager\blockentity\SMBlockEntity.cpp" />
+    <ClCompile Include="servermanager\block\SMBlock.cpp" />
+    <ClCompile Include="servermanager\client\custom\CustomMinecraftClient.cpp" />
+    <ClCompile Include="servermanager\client\gui\custom\CustomChatScreen.cpp" />
+    <ClCompile Include="servermanager\client\settings\SMOptions.cpp" />
+    <ClCompile Include="servermanager\command\Command.cpp" />
+    <ClCompile Include="servermanager\command\CommandMap.cpp" />
+    <ClCompile Include="servermanager\command\defaults\BanCommand.cpp" />
+    <ClCompile Include="servermanager\command\defaults\BanIpCommand.cpp" />
+    <ClCompile Include="servermanager\command\defaults\BanListCommand.cpp" />
+    <ClCompile Include="servermanager\command\defaults\DeopCommand.cpp" />
+    <ClCompile Include="servermanager\command\defaults\GameModeCommand.cpp" />
+    <ClCompile Include="servermanager\command\defaults\GiveCommand.cpp" />
+    <ClCompile Include="servermanager\command\defaults\HelpCommand.cpp" />
+    <ClCompile Include="servermanager\command\defaults\KickCommand.cpp" />
+    <ClCompile Include="servermanager\command\defaults\KillCommand.cpp" />
+    <ClCompile Include="servermanager\command\defaults\ListCommand.cpp" />
+    <ClCompile Include="servermanager\command\defaults\MeCommand.cpp" />
+    <ClCompile Include="servermanager\command\defaults\OpCommand.cpp" />
+    <ClCompile Include="servermanager\command\defaults\PardonCommand.cpp" />
+    <ClCompile Include="servermanager\command\defaults\PardonIpCommand.cpp" />
+    <ClCompile Include="servermanager\command\defaults\TeleportCommand.cpp" />
+    <ClCompile Include="servermanager\command\defaults\TellCommand.cpp" />
+    <ClCompile Include="servermanager\command\defaults\TimeCommand.cpp" />
+    <ClCompile Include="servermanager\command\defaults\ToggleDownFallCommand.cpp" />
+    <ClCompile Include="servermanager\command\defaults\VanillaCommand.cpp" />
+    <ClCompile Include="servermanager\command\defaults\WhitelistCommand.cpp" />
+    <ClCompile Include="servermanager\command\PluginCommand.cpp" />
+    <ClCompile Include="servermanager\entity\custom\CustomArrow.cpp" />
+    <ClCompile Include="servermanager\entity\custom\CustomCreeper.cpp" />
+    <ClCompile Include="servermanager\entity\custom\CustomItemEntity.cpp" />
+    <ClCompile Include="servermanager\entity\custom\CustomLocalPlayer.cpp" />
+    <ClCompile Include="servermanager\entity\custom\CustomPlayer.cpp" />
+    <ClCompile Include="servermanager\entity\SMAgableMob.cpp" />
+    <ClCompile Include="servermanager\entity\SMAnimal.cpp" />
+    <ClCompile Include="servermanager\entity\SMArrow.cpp" />
+    <ClCompile Include="servermanager\entity\SMBlaze.cpp" />
+    <ClCompile Include="servermanager\entity\SMBoat.cpp" />
+    <ClCompile Include="servermanager\entity\SMChicken.cpp" />
+    <ClCompile Include="servermanager\entity\SMCow.cpp" />
+    <ClCompile Include="servermanager\entity\SMCreeper.cpp" />
+    <ClCompile Include="servermanager\entity\SMEnderman.cpp" />
+    <ClCompile Include="servermanager\entity\SMEntity.cpp" />
+    <ClCompile Include="servermanager\entity\SMItemEntity.cpp" />
+    <ClCompile Include="servermanager\entity\SMLocalPlayer.cpp" />
+    <ClCompile Include="servermanager\entity\SMMob.cpp" />
+    <ClCompile Include="servermanager\entity\SMMonster.cpp" />
+    <ClCompile Include="servermanager\entity\SMMushroomCow.cpp" />
+    <ClCompile Include="servermanager\entity\SMPathfinderMob.cpp" />
+    <ClCompile Include="servermanager\entity\SMPig.cpp" />
+    <ClCompile Include="servermanager\entity\SMPlayer.cpp" />
+    <ClCompile Include="servermanager\entity\SMSheep.cpp" />
+    <ClCompile Include="servermanager\entity\SMSkeleton.cpp" />
+    <ClCompile Include="servermanager\entity\SMWaterMob.cpp" />
+    <ClCompile Include="servermanager\entity\SMZombie.cpp" />
+    <ClCompile Include="servermanager\event\block\BlockBreakEvent.cpp" />
+    <ClCompile Include="servermanager\event\block\BlockEvent.cpp" />
+    <ClCompile Include="servermanager\event\block\BlockExpEvent.cpp" />
+    <ClCompile Include="servermanager\event\block\BlockPlaceEvent.cpp" />
+    <ClCompile Include="servermanager\event\block\SignChangeEvent.cpp" />
+    <ClCompile Include="servermanager\event\Cancellable.cpp" />
+    <ClCompile Include="servermanager\event\entity\CreeperPowerEvent.cpp" />
+    <ClCompile Include="servermanager\event\entity\SMEntityEvent.cpp" />
+    <ClCompile Include="servermanager\event\Event.cpp" />
+    <ClCompile Include="servermanager\event\EventFactory.cpp" />
+    <ClCompile Include="servermanager\event\HandlerList.cpp" />
+    <ClCompile Include="servermanager\event\player\PlayerAnimationType.cpp" />
+    <ClCompile Include="servermanager\event\player\PlayerBedEnterEvent.cpp" />
+    <ClCompile Include="servermanager\event\player\PlayerBedLeaveEvent.cpp" />
+    <ClCompile Include="servermanager\event\player\PlayerChatEvent.cpp" />
+    <ClCompile Include="servermanager\event\player\PlayerCommandPreprocessEvent.cpp" />
+    <ClCompile Include="servermanager\event\player\PlayerDropItemEvent.cpp" />
+    <ClCompile Include="servermanager\event\player\PlayerEvent.cpp" />
+    <ClCompile Include="servermanager\event\player\PlayerGameModeChangeEvent.cpp" />
+    <ClCompile Include="servermanager\event\player\PlayerInteractEvent.cpp" />
+    <ClCompile Include="servermanager\event\player\PlayerJoinEvent.cpp" />
+    <ClCompile Include="servermanager\event\player\PlayerLoginEvent.cpp" />
+    <ClCompile Include="servermanager\event\player\PlayerMoveEvent.cpp" />
+    <ClCompile Include="servermanager\event\player\PlayerPickupItemEvent.cpp" />
+    <ClCompile Include="servermanager\event\player\PlayerPreLoginEvent.cpp" />
+    <ClCompile Include="servermanager\event\player\PlayerQuitEvent.cpp" />
+    <ClCompile Include="servermanager\event\player\PlayerTeleportEvent.cpp" />
+    <ClCompile Include="servermanager\event\server\PluginDisableEvent.cpp" />
+    <ClCompile Include="servermanager\event\server\PluginEnableEvent.cpp" />
+    <ClCompile Include="servermanager\event\server\PluginEvent.cpp" />
+    <ClCompile Include="servermanager\level\custom\CustomLevel.cpp" />
+    <ClCompile Include="servermanager\level\SMBlockSource.cpp" />
+    <ClCompile Include="servermanager\level\SMLevel.cpp" />
+    <ClCompile Include="servermanager\Location.cpp" />
+    <ClCompile Include="servermanager\network\custom\CustomRakNetInstance.cpp" />
+    <ClCompile Include="servermanager\network\custom\CustomServerNetworkHandler.cpp" />
+    <ClCompile Include="servermanager\plugin\PluginBase.cpp" />
+    <ClCompile Include="servermanager\plugin\PluginDescriptionFile.cpp" />
+    <ClCompile Include="servermanager\plugin\PluginManager.cpp" />
+    <ClCompile Include="servermanager\plugin\RegisteredListener.cpp" />
+    <ClCompile Include="servermanager\Server.cpp" />
+    <ClCompile Include="servermanager\ServerManager.cpp" />
+    <ClCompile Include="servermanager\SMList.cpp" />
+    <ClCompile Include="servermanager\util\SMUtil.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="hook\hook.h" />
+    <ClInclude Include="log.h" />
+    <ClInclude Include="servermanager\BanEntry.h" />
+    <ClInclude Include="servermanager\BanList.h" />
+    <ClInclude Include="servermanager\blockentity\SMBlockEntity.h" />
+    <ClInclude Include="servermanager\block\BlockFace.h" />
+    <ClInclude Include="servermanager\block\SMBlock.h" />
+    <ClInclude Include="servermanager\client\custom\CustomMinecraftClient.h" />
+    <ClInclude Include="servermanager\client\gui\custom\CustomChatScreen.h" />
+    <ClInclude Include="servermanager\client\settings\SMOptions.h" />
+    <ClInclude Include="servermanager\command\Command.h" />
+    <ClInclude Include="servermanager\command\CommandExecutor.h" />
+    <ClInclude Include="servermanager\command\CommandMap.h" />
+    <ClInclude Include="servermanager\command\defaults\BanCommand.h" />
+    <ClInclude Include="servermanager\command\defaults\BanIpCommand.h" />
+    <ClInclude Include="servermanager\command\defaults\BanListCommand.h" />
+    <ClInclude Include="servermanager\command\defaults\DeopCommand.h" />
+    <ClInclude Include="servermanager\command\defaults\GameModeCommand.h" />
+    <ClInclude Include="servermanager\command\defaults\GiveCommand.h" />
+    <ClInclude Include="servermanager\command\defaults\HelpCommand.h" />
+    <ClInclude Include="servermanager\command\defaults\KickCommand.h" />
+    <ClInclude Include="servermanager\command\defaults\KillCommand.h" />
+    <ClInclude Include="servermanager\command\defaults\ListCommand.h" />
+    <ClInclude Include="servermanager\command\defaults\MeCommand.h" />
+    <ClInclude Include="servermanager\command\defaults\OpCommand.h" />
+    <ClInclude Include="servermanager\command\defaults\PardonCommand.h" />
+    <ClInclude Include="servermanager\command\defaults\PardonIpCommand.h" />
+    <ClInclude Include="servermanager\command\defaults\TeleportCommand.h" />
+    <ClInclude Include="servermanager\command\defaults\TellCommand.h" />
+    <ClInclude Include="servermanager\command\defaults\TimeCommand.h" />
+    <ClInclude Include="servermanager\command\defaults\ToogleDownFallCommand.h" />
+    <ClInclude Include="servermanager\command\defaults\VanillaCommand.h" />
+    <ClInclude Include="servermanager\command\defaults\WhitelistCommand.h" />
+    <ClInclude Include="servermanager\command\PluginCommand.h" />
+    <ClInclude Include="servermanager\command\PluginIdentifiableCommand.h" />
+    <ClInclude Include="servermanager\entity\custom\CustomArrow.h" />
+    <ClInclude Include="servermanager\entity\custom\CustomCreeper.h" />
+    <ClInclude Include="servermanager\entity\custom\CustomItemEntity.h" />
+    <ClInclude Include="servermanager\entity\custom\CustomLocalPlayer.h" />
+    <ClInclude Include="servermanager\entity\custom\CustomPlayer.h" />
+    <ClInclude Include="servermanager\entity\SMAgableMob.h" />
+    <ClInclude Include="servermanager\entity\SMAnimal.h" />
+    <ClInclude Include="servermanager\entity\SMArrow.h" />
+    <ClInclude Include="servermanager\entity\SMBlaze.h" />
+    <ClInclude Include="servermanager\entity\SMBoat.h" />
+    <ClInclude Include="servermanager\entity\SMChicken.h" />
+    <ClInclude Include="servermanager\entity\SMCow.h" />
+    <ClInclude Include="servermanager\entity\SMCreeper.h" />
+    <ClInclude Include="servermanager\entity\SMEnderman.h" />
+    <ClInclude Include="servermanager\entity\SMEntity.h" />
+    <ClInclude Include="servermanager\entity\SMItemEntity.h" />
+    <ClInclude Include="servermanager\entity\SMLocalPlayer.h" />
+    <ClInclude Include="servermanager\entity\SMMob.h" />
+    <ClInclude Include="servermanager\entity\SMMonster.h" />
+    <ClInclude Include="servermanager\entity\SMMushroomCow.h" />
+    <ClInclude Include="servermanager\entity\SMPathfinderMob.h" />
+    <ClInclude Include="servermanager\entity\SMPig.h" />
+    <ClInclude Include="servermanager\entity\SMPlayer.h" />
+    <ClInclude Include="servermanager\entity\SMSheep.h" />
+    <ClInclude Include="servermanager\entity\SMSkeleton.h" />
+    <ClInclude Include="servermanager\entity\SMWaterMob.h" />
+    <ClInclude Include="servermanager\entity\SMZombie.h" />
+    <ClInclude Include="servermanager\event\block\Action.h" />
+    <ClInclude Include="servermanager\event\block\BlockBreakEvent.h" />
+    <ClInclude Include="servermanager\event\block\BlockEvent.h" />
+    <ClInclude Include="servermanager\event\block\BlockExpEvent.h" />
+    <ClInclude Include="servermanager\event\block\BlockPlaceEvent.h" />
+    <ClInclude Include="servermanager\event\block\SignChangeEvent.h" />
+    <ClInclude Include="servermanager\event\Cancellable.h" />
+    <ClInclude Include="servermanager\event\entity\CreeperPowerEvent.h" />
+    <ClInclude Include="servermanager\event\entity\SMEntityEvent.h" />
+    <ClInclude Include="servermanager\event\Event.h" />
+    <ClInclude Include="servermanager\event\EventExecutor.h" />
+    <ClInclude Include="servermanager\event\EventFactory.h" />
+    <ClInclude Include="servermanager\event\EventPriority.h" />
+    <ClInclude Include="servermanager\event\EventType.h" />
+    <ClInclude Include="servermanager\event\HandlerList.h" />
+    <ClInclude Include="servermanager\event\Listener.h" />
+    <ClInclude Include="servermanager\event\player\PlayerAnimationEvent.h" />
+    <ClInclude Include="servermanager\event\player\PlayerAnimationType.h" />
+    <ClInclude Include="servermanager\event\player\PlayerBedEnterEvent.h" />
+    <ClInclude Include="servermanager\event\player\PlayerBedLeaveEvent.h" />
+    <ClInclude Include="servermanager\event\player\PlayerChatEvent.h" />
+    <ClInclude Include="servermanager\event\player\PlayerCommandPreprocessEvent.h" />
+    <ClInclude Include="servermanager\event\player\PlayerDropItemEvent.h" />
+    <ClInclude Include="servermanager\event\player\PlayerEvent.h" />
+    <ClInclude Include="servermanager\event\player\PlayerGameModeChangeEvent.h" />
+    <ClInclude Include="servermanager\event\player\PlayerInteractEvent.h" />
+    <ClInclude Include="servermanager\event\player\PlayerJoinEvent.h" />
+    <ClInclude Include="servermanager\event\player\PlayerLoginEvent.h" />
+    <ClInclude Include="servermanager\event\player\PlayerMoveEvent.h" />
+    <ClInclude Include="servermanager\event\player\PlayerPickupItemEvent.h" />
+    <ClInclude Include="servermanager\event\player\PlayerPreLoginEvent.h" />
+    <ClInclude Include="servermanager\event\player\PlayerQuitEvent.h" />
+    <ClInclude Include="servermanager\event\player\PlayerTeleportEvent.h" />
+    <ClInclude Include="servermanager\event\server\PluginDisableEvent.h" />
+    <ClInclude Include="servermanager\event\server\PluginEnableEvent.h" />
+    <ClInclude Include="servermanager\event\server\PluginEvent.h" />
+    <ClInclude Include="servermanager\level\custom\CustomLevel.h" />
+    <ClInclude Include="servermanager\level\SMBlockSource.h" />
+    <ClInclude Include="servermanager\level\SMLevel.h" />
+    <ClInclude Include="servermanager\Location.h" />
+    <ClInclude Include="servermanager\network\custom\CustomRakNetInstance.h" />
+    <ClInclude Include="servermanager\network\custom\CustomServerNetworkHandler.h" />
+    <ClInclude Include="servermanager\network\PacketID.h" />
+    <ClInclude Include="servermanager\plugin\Plugin.h" />
+    <ClInclude Include="servermanager\plugin\PluginBase.h" />
+    <ClInclude Include="servermanager\plugin\PluginDescriptionFile.h" />
+    <ClInclude Include="servermanager\plugin\PluginLoadOrder.h" />
+    <ClInclude Include="servermanager\plugin\PluginManager.h" />
+    <ClInclude Include="servermanager\plugin\RegisteredListener.h" />
+    <ClInclude Include="servermanager\Server.h" />
+    <ClInclude Include="servermanager\ServerManager.h" />
+    <ClInclude Include="servermanager\SMList.h" />
+    <ClInclude Include="servermanager\util\SMUtil.h" />
+    <ClInclude Include="servermanager\version.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\..\..\curl\lib\libcrypto.a" />
+    <Library Include="..\..\..\curl\lib\libcurl.a" />
+    <Library Include="..\..\..\curl\lib\libssl.a" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

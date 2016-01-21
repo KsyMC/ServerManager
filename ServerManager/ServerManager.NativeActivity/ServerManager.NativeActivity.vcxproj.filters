@@ -1,0 +1,748 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="hook\hook.cpp">
+      <Filter>hook</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\BanEntry.cpp">
+      <Filter>servermarnager</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\BanList.cpp">
+      <Filter>servermarnager</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\Location.cpp">
+      <Filter>servermarnager</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\Server.cpp">
+      <Filter>servermarnager</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\ServerManager.cpp">
+      <Filter>servermarnager</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\SMList.cpp">
+      <Filter>servermarnager</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\block\SMBlock.cpp">
+      <Filter>servermarnager\block</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\blockentity\SMBlockEntity.cpp">
+      <Filter>servermarnager\blockentity</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\command\Command.cpp">
+      <Filter>servermarnager\command</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\command\CommandMap.cpp">
+      <Filter>servermarnager\command</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\command\PluginCommand.cpp">
+      <Filter>servermarnager\command</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\command\defaults\BanListCommand.cpp">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\command\defaults\DeopCommand.cpp">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\command\defaults\GameModeCommand.cpp">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\command\defaults\GiveCommand.cpp">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\command\defaults\HelpCommand.cpp">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\command\defaults\KickCommand.cpp">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\command\defaults\KillCommand.cpp">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\command\defaults\ListCommand.cpp">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\command\defaults\MeCommand.cpp">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\command\defaults\OpCommand.cpp">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\command\defaults\PardonCommand.cpp">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\command\defaults\PardonIpCommand.cpp">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\command\defaults\TeleportCommand.cpp">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\command\defaults\TellCommand.cpp">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\command\defaults\TimeCommand.cpp">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\command\defaults\ToggleDownFallCommand.cpp">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\command\defaults\VanillaCommand.cpp">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\command\defaults\WhitelistCommand.cpp">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\command\defaults\BanCommand.cpp">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\command\defaults\BanIpCommand.cpp">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\SMSkeleton.cpp">
+      <Filter>servermarnager\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\SMWaterMob.cpp">
+      <Filter>servermarnager\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\SMZombie.cpp">
+      <Filter>servermarnager\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\SMAgableMob.cpp">
+      <Filter>servermarnager\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\SMAnimal.cpp">
+      <Filter>servermarnager\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\SMArrow.cpp">
+      <Filter>servermarnager\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\SMBlaze.cpp">
+      <Filter>servermarnager\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\SMBoat.cpp">
+      <Filter>servermarnager\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\SMChicken.cpp">
+      <Filter>servermarnager\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\SMCow.cpp">
+      <Filter>servermarnager\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\SMCreeper.cpp">
+      <Filter>servermarnager\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\SMEnderman.cpp">
+      <Filter>servermarnager\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\SMEntity.cpp">
+      <Filter>servermarnager\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\SMItemEntity.cpp">
+      <Filter>servermarnager\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\SMLocalPlayer.cpp">
+      <Filter>servermarnager\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\SMMob.cpp">
+      <Filter>servermarnager\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\SMMonster.cpp">
+      <Filter>servermarnager\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\SMMushroomCow.cpp">
+      <Filter>servermarnager\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\SMPathfinderMob.cpp">
+      <Filter>servermarnager\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\SMPig.cpp">
+      <Filter>servermarnager\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\SMPlayer.cpp">
+      <Filter>servermarnager\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\SMSheep.cpp">
+      <Filter>servermarnager\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\custom\CustomCreeper.cpp">
+      <Filter>servermarnager\entity\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\custom\CustomItemEntity.cpp">
+      <Filter>servermarnager\entity\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\custom\CustomLocalPlayer.cpp">
+      <Filter>servermarnager\entity\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\custom\CustomPlayer.cpp">
+      <Filter>servermarnager\entity\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\custom\CustomArrow.cpp">
+      <Filter>servermarnager\entity\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\event\Event.cpp">
+      <Filter>servermarnager\event</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\event\EventFactory.cpp">
+      <Filter>servermarnager\event</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\event\HandlerList.cpp">
+      <Filter>servermarnager\event</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\event\Cancellable.cpp">
+      <Filter>servermarnager\event</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\event\block\BlockExpEvent.cpp">
+      <Filter>servermarnager\event\block</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\event\block\BlockPlaceEvent.cpp">
+      <Filter>servermarnager\event\block</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\event\block\SignChangeEvent.cpp">
+      <Filter>servermarnager\event\block</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\event\block\BlockBreakEvent.cpp">
+      <Filter>servermarnager\event\block</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\event\block\BlockEvent.cpp">
+      <Filter>servermarnager\event\block</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\event\entity\SMEntityEvent.cpp">
+      <Filter>servermarnager\event\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\event\entity\CreeperPowerEvent.cpp">
+      <Filter>servermarnager\event\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\event\player\PlayerChatEvent.cpp">
+      <Filter>servermarnager\event\player</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\event\player\PlayerCommandPreprocessEvent.cpp">
+      <Filter>servermarnager\event\player</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\event\player\PlayerDropItemEvent.cpp">
+      <Filter>servermarnager\event\player</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\event\player\PlayerEvent.cpp">
+      <Filter>servermarnager\event\player</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\event\player\PlayerGameModeChangeEvent.cpp">
+      <Filter>servermarnager\event\player</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\event\player\PlayerInteractEvent.cpp">
+      <Filter>servermarnager\event\player</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\event\player\PlayerJoinEvent.cpp">
+      <Filter>servermarnager\event\player</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\event\player\PlayerLoginEvent.cpp">
+      <Filter>servermarnager\event\player</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\event\player\PlayerMoveEvent.cpp">
+      <Filter>servermarnager\event\player</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\event\player\PlayerPickupItemEvent.cpp">
+      <Filter>servermarnager\event\player</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\event\player\PlayerPreLoginEvent.cpp">
+      <Filter>servermarnager\event\player</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\event\player\PlayerQuitEvent.cpp">
+      <Filter>servermarnager\event\player</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\event\player\PlayerTeleportEvent.cpp">
+      <Filter>servermarnager\event\player</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\event\player\PlayerAnimationType.cpp">
+      <Filter>servermarnager\event\player</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\event\player\PlayerBedEnterEvent.cpp">
+      <Filter>servermarnager\event\player</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\event\player\PlayerBedLeaveEvent.cpp">
+      <Filter>servermarnager\event\player</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\event\server\PluginEnableEvent.cpp">
+      <Filter>servermarnager\event\server</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\event\server\PluginEvent.cpp">
+      <Filter>servermarnager\event\server</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\event\server\PluginDisableEvent.cpp">
+      <Filter>servermarnager\event\server</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\level\SMLevel.cpp">
+      <Filter>servermarnager\level</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\level\SMBlockSource.cpp">
+      <Filter>servermarnager\level</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\level\custom\CustomLevel.cpp">
+      <Filter>servermarnager\level\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\network\custom\CustomRakNetInstance.cpp">
+      <Filter>servermarnager\network\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\network\custom\CustomServerNetworkHandler.cpp">
+      <Filter>servermarnager\network\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\plugin\PluginDescriptionFile.cpp">
+      <Filter>servermarnager\plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\plugin\PluginManager.cpp">
+      <Filter>servermarnager\plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\plugin\RegisteredListener.cpp">
+      <Filter>servermarnager\plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\plugin\PluginBase.cpp">
+      <Filter>servermarnager\plugin</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\util\SMUtil.cpp">
+      <Filter>servermarnager\util</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\client\settings\SMOptions.cpp">
+      <Filter>servermarnager\client\settings</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\client\gui\custom\CustomChatScreen.cpp">
+      <Filter>servermarnager\client\gui\custom</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\client\custom\CustomMinecraftClient.cpp">
+      <Filter>servermarnager\client\custom</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="hook">
+      <UniqueIdentifier>{a5efa6a5-6f70-41da-bb21-8f12913a2bf7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servermarnager">
+      <UniqueIdentifier>{8fbd0bd1-2626-4e63-b0ec-e37350b2fe65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servermarnager\block">
+      <UniqueIdentifier>{bd099fad-2539-4ec7-a881-981f25c177f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servermarnager\blockentity">
+      <UniqueIdentifier>{bc6cc3c3-1357-425d-8ade-8f47660b3d50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servermarnager\command">
+      <UniqueIdentifier>{a134dc57-c361-44e0-8dec-36a012f5845b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servermarnager\command\defaults">
+      <UniqueIdentifier>{c539c073-ff3b-4b52-88de-4a7bad4fe1f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servermarnager\entity">
+      <UniqueIdentifier>{7177a42b-a570-4a67-b68e-0a8c437df8dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servermarnager\entity\custom">
+      <UniqueIdentifier>{bf4f4322-ad2c-4784-b4bc-1795d94f3054}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servermarnager\event">
+      <UniqueIdentifier>{40cfb8c8-b09f-48f1-bbaa-3f571354d5e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servermarnager\event\block">
+      <UniqueIdentifier>{bc7bac79-948c-4ce2-bdc4-5e748290d508}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servermarnager\event\entity">
+      <UniqueIdentifier>{ffd2d3af-6220-4146-8361-cb0239ce647d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servermarnager\event\player">
+      <UniqueIdentifier>{8ce3e7d9-d9fb-45ca-9748-50734bcf7bdc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servermarnager\event\server">
+      <UniqueIdentifier>{1d60b95f-992a-4bd9-92fc-621740ec95ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servermarnager\level">
+      <UniqueIdentifier>{557f079f-b35f-4f70-8987-7482685c2c96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servermarnager\level\custom">
+      <UniqueIdentifier>{6a8753e0-453e-4f54-ad42-e4b7e63d2616}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servermarnager\network">
+      <UniqueIdentifier>{bc4a23b8-e428-4876-81a6-e19af26bad23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servermarnager\network\custom">
+      <UniqueIdentifier>{29eb3d2b-6a43-4a7f-951e-26ad5da727bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servermarnager\plugin">
+      <UniqueIdentifier>{334643b8-fa17-4999-a329-69cb82c7bdfa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servermarnager\util">
+      <UniqueIdentifier>{409e23d8-c9af-4379-98bd-0334cefe39a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servermarnager\client">
+      <UniqueIdentifier>{ba7ae457-1c08-422a-9af3-6b7d41a9441f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servermarnager\client\settings">
+      <UniqueIdentifier>{bd755cf2-3700-47e1-a3c7-885aaafffce0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servermarnager\client\gui">
+      <UniqueIdentifier>{b5d83e4a-3d0a-495b-815d-296fdf497312}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servermarnager\client\gui\custom">
+      <UniqueIdentifier>{9bf3e442-24ac-47af-b007-76fce09991d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servermarnager\client\custom">
+      <UniqueIdentifier>{4c764f4e-8276-4bf9-9c50-06adbf4c2893}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="curl">
+      <UniqueIdentifier>{8aca09ee-fcf4-45e3-940a-7deb376c6039}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="hook\hook.h">
+      <Filter>hook</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\BanEntry.h">
+      <Filter>servermarnager</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\BanList.h">
+      <Filter>servermarnager</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\Location.h">
+      <Filter>servermarnager</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\Server.h">
+      <Filter>servermarnager</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\ServerManager.h">
+      <Filter>servermarnager</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\SMList.h">
+      <Filter>servermarnager</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\version.h">
+      <Filter>servermarnager</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\block\BlockFace.h">
+      <Filter>servermarnager\block</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\block\SMBlock.h">
+      <Filter>servermarnager\block</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\blockentity\SMBlockEntity.h">
+      <Filter>servermarnager\blockentity</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\command\Command.h">
+      <Filter>servermarnager\command</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\command\CommandExecutor.h">
+      <Filter>servermarnager\command</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\command\CommandMap.h">
+      <Filter>servermarnager\command</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\command\PluginCommand.h">
+      <Filter>servermarnager\command</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\command\PluginIdentifiableCommand.h">
+      <Filter>servermarnager\command</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\command\defaults\BanIpCommand.h">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\command\defaults\BanListCommand.h">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\command\defaults\DeopCommand.h">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\command\defaults\GameModeCommand.h">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\command\defaults\GiveCommand.h">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\command\defaults\HelpCommand.h">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\command\defaults\KickCommand.h">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\command\defaults\KillCommand.h">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\command\defaults\ListCommand.h">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\command\defaults\MeCommand.h">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\command\defaults\OpCommand.h">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\command\defaults\PardonCommand.h">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\command\defaults\PardonIpCommand.h">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\command\defaults\TeleportCommand.h">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\command\defaults\TellCommand.h">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\command\defaults\TimeCommand.h">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\command\defaults\ToogleDownFallCommand.h">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\command\defaults\VanillaCommand.h">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\command\defaults\WhitelistCommand.h">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\command\defaults\BanCommand.h">
+      <Filter>servermarnager\command\defaults</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\SMSkeleton.h">
+      <Filter>servermarnager\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\SMWaterMob.h">
+      <Filter>servermarnager\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\SMZombie.h">
+      <Filter>servermarnager\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\SMAgableMob.h">
+      <Filter>servermarnager\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\SMAnimal.h">
+      <Filter>servermarnager\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\SMArrow.h">
+      <Filter>servermarnager\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\SMBlaze.h">
+      <Filter>servermarnager\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\SMBoat.h">
+      <Filter>servermarnager\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\SMChicken.h">
+      <Filter>servermarnager\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\SMCow.h">
+      <Filter>servermarnager\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\SMCreeper.h">
+      <Filter>servermarnager\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\SMEnderman.h">
+      <Filter>servermarnager\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\SMEntity.h">
+      <Filter>servermarnager\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\SMItemEntity.h">
+      <Filter>servermarnager\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\SMLocalPlayer.h">
+      <Filter>servermarnager\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\SMMob.h">
+      <Filter>servermarnager\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\SMMonster.h">
+      <Filter>servermarnager\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\SMMushroomCow.h">
+      <Filter>servermarnager\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\SMPathfinderMob.h">
+      <Filter>servermarnager\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\SMPig.h">
+      <Filter>servermarnager\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\SMPlayer.h">
+      <Filter>servermarnager\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\SMSheep.h">
+      <Filter>servermarnager\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\custom\CustomArrow.h">
+      <Filter>servermarnager\entity\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\custom\CustomCreeper.h">
+      <Filter>servermarnager\entity\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\custom\CustomItemEntity.h">
+      <Filter>servermarnager\entity\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\custom\CustomLocalPlayer.h">
+      <Filter>servermarnager\entity\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\custom\CustomPlayer.h">
+      <Filter>servermarnager\entity\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\Event.h">
+      <Filter>servermarnager\event</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\EventExecutor.h">
+      <Filter>servermarnager\event</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\EventFactory.h">
+      <Filter>servermarnager\event</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\EventPriority.h">
+      <Filter>servermarnager\event</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\EventType.h">
+      <Filter>servermarnager\event</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\HandlerList.h">
+      <Filter>servermarnager\event</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\Listener.h">
+      <Filter>servermarnager\event</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\Cancellable.h">
+      <Filter>servermarnager\event</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\block\BlockEvent.h">
+      <Filter>servermarnager\event\block</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\block\BlockExpEvent.h">
+      <Filter>servermarnager\event\block</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\block\BlockPlaceEvent.h">
+      <Filter>servermarnager\event\block</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\block\SignChangeEvent.h">
+      <Filter>servermarnager\event\block</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\block\Action.h">
+      <Filter>servermarnager\event\block</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\block\BlockBreakEvent.h">
+      <Filter>servermarnager\event\block</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\entity\SMEntityEvent.h">
+      <Filter>servermarnager\event\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\entity\CreeperPowerEvent.h">
+      <Filter>servermarnager\event\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\player\PlayerChatEvent.h">
+      <Filter>servermarnager\event\player</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\player\PlayerCommandPreprocessEvent.h">
+      <Filter>servermarnager\event\player</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\player\PlayerDropItemEvent.h">
+      <Filter>servermarnager\event\player</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\player\PlayerEvent.h">
+      <Filter>servermarnager\event\player</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\player\PlayerGameModeChangeEvent.h">
+      <Filter>servermarnager\event\player</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\player\PlayerInteractEvent.h">
+      <Filter>servermarnager\event\player</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\player\PlayerJoinEvent.h">
+      <Filter>servermarnager\event\player</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\player\PlayerLoginEvent.h">
+      <Filter>servermarnager\event\player</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\player\PlayerMoveEvent.h">
+      <Filter>servermarnager\event\player</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\player\PlayerPickupItemEvent.h">
+      <Filter>servermarnager\event\player</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\player\PlayerPreLoginEvent.h">
+      <Filter>servermarnager\event\player</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\player\PlayerQuitEvent.h">
+      <Filter>servermarnager\event\player</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\player\PlayerTeleportEvent.h">
+      <Filter>servermarnager\event\player</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\player\PlayerAnimationEvent.h">
+      <Filter>servermarnager\event\player</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\player\PlayerAnimationType.h">
+      <Filter>servermarnager\event\player</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\player\PlayerBedEnterEvent.h">
+      <Filter>servermarnager\event\player</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\player\PlayerBedLeaveEvent.h">
+      <Filter>servermarnager\event\player</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\server\PluginEnableEvent.h">
+      <Filter>servermarnager\event\server</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\server\PluginEvent.h">
+      <Filter>servermarnager\event\server</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\event\server\PluginDisableEvent.h">
+      <Filter>servermarnager\event\server</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\level\SMLevel.h">
+      <Filter>servermarnager\level</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\level\SMBlockSource.h">
+      <Filter>servermarnager\level</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\level\custom\CustomLevel.h">
+      <Filter>servermarnager\level\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\network\PacketID.h">
+      <Filter>servermarnager\network</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\network\custom\CustomRakNetInstance.h">
+      <Filter>servermarnager\network\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\network\custom\CustomServerNetworkHandler.h">
+      <Filter>servermarnager\network\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\plugin\PluginDescriptionFile.h">
+      <Filter>servermarnager\plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\plugin\PluginLoadOrder.h">
+      <Filter>servermarnager\plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\plugin\PluginManager.h">
+      <Filter>servermarnager\plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\plugin\RegisteredListener.h">
+      <Filter>servermarnager\plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\plugin\Plugin.h">
+      <Filter>servermarnager\plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\plugin\PluginBase.h">
+      <Filter>servermarnager\plugin</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\util\SMUtil.h">
+      <Filter>servermarnager\util</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\client\settings\SMOptions.h">
+      <Filter>servermarnager\client\settings</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\client\gui\custom\CustomChatScreen.h">
+      <Filter>servermarnager\client\gui\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\client\custom\CustomMinecraftClient.h">
+      <Filter>servermarnager\client\custom</Filter>
+    </ClInclude>
+    <ClInclude Include="log.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\..\..\curl\lib\libcrypto.a">
+      <Filter>curl</Filter>
+    </Library>
+    <Library Include="..\..\..\curl\lib\libcurl.a">
+      <Filter>curl</Filter>
+    </Library>
+    <Library Include="..\..\..\curl\lib\libssl.a">
+      <Filter>curl</Filter>
+    </Library>
+  </ItemGroup>
+</Project>
