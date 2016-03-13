@@ -1,19 +1,23 @@
 #include "KillCommand.h"
 #include "../../ServerManager.h"
-#include "../../entity/SMPlayer.h"
-#include "minecraftpe/entity/EntityDamageSource.h"
-#include "minecraftpe/entity/player/Player.h"
+#include "../../entity/player/SMPlayer.h"
+#include "minecraftpe/world/entity/EntityDamageSource.h"
+#include "minecraftpe/world/entity/player/Player.h"
 
 KillCommand::KillCommand()
 	: VanillaCommand("kill")
 {
 	description = "Commit suicide or kill other players";
 	usageMessage = "/kill";
+	setPermission("servermanager.command.kill");
 }
 
-bool KillCommand::execute(SMPlayer *sender, std::string &label, std::vector<std::string> &args)
+bool KillCommand::execute(CommandSender *sender, std::string &label, std::vector<std::string> &args)
 {
-	sender->getHandle()->die(EntityDamageSource(CAUSE_SUICIDE));
+	if (!testPermission(sender)) return true;
+
+	SMPlayer *player = (SMPlayer *)sender;
+	player->getHandle()->die(EntityDamageSource(CAUSE_SUICIDE));
 	sender->sendMessage("Ouch. That look like it hurt.");
 
 	return true;

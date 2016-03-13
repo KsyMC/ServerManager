@@ -1,5 +1,5 @@
 #include "SMPathfinderMob.h"
-#include "minecraftpe/entity/PathfinderMob.h"
+#include "minecraftpe/world/entity/PathfinderMob.h"
 
 SMPathfinderMob::SMPathfinderMob(Server *server, PathfinderMob *entity)
 	: SMMob(server, entity)

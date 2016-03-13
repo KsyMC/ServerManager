@@ -1,5 +1,5 @@
 #include "PlayerChatEvent.h"
-#include "../../entity/SMPlayer.h"
+#include "../../entity/player/SMPlayer.h"
 #include "../../event/HandlerList.h"
 #include "../../util/SMUtil.h"
 

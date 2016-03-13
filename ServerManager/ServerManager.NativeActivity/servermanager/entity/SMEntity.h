@@ -4,8 +4,8 @@
 
 #include "../Location.h"
 #include "../event/player/PlayerTeleportEvent.h"
-#include "minecraftpe/entity/EntityUniqueID.h"
-#include "minecraftpe/entity/EntityType.h"
+#include "minecraftpe/world/entity/EntityUniqueID.h"
+#include "minecraftpe/world/entity/EntityType.h"
 
 class Server;
 class Entity;
@@ -49,7 +49,7 @@ public:
 	Location getLocation() const;
 	Location &getLocation(Location &loc) const;
 
-	Vec3 &getVelocity() const;
+	const Vec3 &getVelocity() const;
 
 	Server *getServer() const;
 

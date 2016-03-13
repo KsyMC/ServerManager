@@ -2,7 +2,7 @@
 
 #include <raknet/RakNetTypes.h>
 
-#include "minecraftpe/gamemode/GameType.h"
+#include "minecraftpe/world/level/GameType.h"
 #include "minecraftpe/util/UUID.h"
 
 class LocalPlayer;

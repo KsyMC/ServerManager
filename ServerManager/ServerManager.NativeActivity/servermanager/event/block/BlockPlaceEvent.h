@@ -2,7 +2,7 @@
 
 #include "BlockEvent.h"
 #include "../Cancellable.h"
-#include "minecraftpe/item/ItemInstance.h"
+#include "minecraftpe/world/item/ItemInstance.h"
 
 class Player;
 

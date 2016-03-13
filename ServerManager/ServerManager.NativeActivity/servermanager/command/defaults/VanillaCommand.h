@@ -17,7 +17,7 @@ public:
 	virtual bool isVanillaCommand() const;
 
 protected:
-	int getInteger(SMPlayer *sender, const std::string &value, int min, int max = std::numeric_limits<int>::max()) const;
-	double getRelativeDouble(double original, SMPlayer *sender, std::string &input) const;
-	double getDouble(SMPlayer *sender, const std::string &value, double min = MIN_COORD, double max = MAX_COORD) const;
+	int getInteger(CommandSender *sender, const std::string &value, int min, int max = std::numeric_limits<int>::max()) const;
+	double getRelativeDouble(double original, CommandSender *sender, std::string &input) const;
+	double getDouble(CommandSender *sender, const std::string &value, double min = MIN_COORD, double max = MAX_COORD) const;
 };

@@ -2,7 +2,7 @@
 
 #include <memory>
 
-#include "minecraftpe/entity/Entity.h"
+#include "minecraftpe/world/entity/Entity.h"
 
 class Level;
 class Entity;

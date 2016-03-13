@@ -2,7 +2,7 @@
 
 #include "PlayerEvent.h"
 #include "../Cancellable.h"
-#include "minecraftpe/gamemode/GameType.h"
+#include "minecraftpe/world/level/GameType.h"
 
 class PlayerGameModeChangeEvent : public PlayerEvent, public Cancellable
 {

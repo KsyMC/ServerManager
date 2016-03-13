@@ -2,7 +2,7 @@
 
 #include "PlayerEvent.h"
 #include "../Cancellable.h"
-#include "minecraftpe/block/FullBlock.h"
+#include "minecraftpe/CommonTypes.h"
 
 class PlayerBedEnterEvent : public PlayerEvent, public Cancellable
 {

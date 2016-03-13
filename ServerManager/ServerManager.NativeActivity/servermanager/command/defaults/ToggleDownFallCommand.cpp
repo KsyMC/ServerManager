@@ -3,10 +3,9 @@
 ToogleDownFallCommand::ToogleDownFallCommand()
 	: VanillaCommand("toggledownfall")
 {
-
 }
 
-bool ToogleDownFallCommand::execute(SMPlayer *sender, std::string &label, std::vector<std::string> &args)
+bool ToogleDownFallCommand::execute(CommandSender *sender, std::string &label, std::vector<std::string> &args)
 {
 	return true;
 }

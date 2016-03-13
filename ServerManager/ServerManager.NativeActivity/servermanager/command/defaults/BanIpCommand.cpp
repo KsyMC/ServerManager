@@ -3,21 +3,24 @@
 #include "BanIpCommand.h"
 #include "../../ServerManager.h"
 #include "../../BanList.h"
-#include "../../entity/SMPlayer.h"
+#include "../../entity/player/SMPlayer.h"
 #include "../../util/SMUtil.h"
+#include "../../ChatColor.h"
 
 BanIpCommand::BanIpCommand()
 	: VanillaCommand("ban-ip")
 {
-	description = "Prevents the specified IP address from using this server",
-		usageMessage = "%commands.banip.usage";
+	description = "Prevents the specified IP address from using this server";
+	usageMessage = "%commands.banip.usage";
+	setPermission("servermanager.command.banip");
 }
 
-bool BanIpCommand::execute(SMPlayer *sender, std::string &label, std::vector<std::string> &args)
+bool BanIpCommand::execute(CommandSender *sender, std::string &label, std::vector<std::string> &args)
 {
+	if (!testPermission(sender)) return true;
 	if ((int)args.size() < 1)
 	{
-		sender->sendTranslation("§c%commands.generic.usage", { usageMessage });
+		sender->sendTranslation(ChatColor::RED + "%commands.generic.usage", { usageMessage });
 		return false;
 	}
 
@@ -37,7 +40,7 @@ bool BanIpCommand::execute(SMPlayer *sender, std::string &label, std::vector<std
 		SMPlayer *player = ServerManager::getPlayer(nameOrIP);
 		if (!player)
 		{
-			sender->sendTranslation("§c%commands.banip.invalid", {});
+			sender->sendTranslation(ChatColor::RED + "%commands.banip.invalid", {});
 			return false;
 		}
 
@@ -49,15 +52,15 @@ bool BanIpCommand::execute(SMPlayer *sender, std::string &label, std::vector<std
 	return true;
 }
 
-void BanIpCommand::processIPBan(const std::string &ip, SMPlayer *source, const std::string &reason)
+void BanIpCommand::processIPBan(const std::string &ip, CommandSender *source, const std::string &reason)
 {
 	ServerManager::getBanList(BanList::IP)->addBan(ip, reason, source->getName());
 
 	std::vector<SMPlayer *> players = ServerManager::getOnlinePlayers();
-	for (int i = 0; i < players.size(); ++i)
+	for (size_t i = 0; i < players.size(); ++i)
 	{
 		SMPlayer *player = players[i];
 		if (!ip.compare(player->getAddress()))
-			ServerManager::kickPlayer(player, "You have been IP banned.");
+			player->kick("You have been IP banned.");
 	}
 }

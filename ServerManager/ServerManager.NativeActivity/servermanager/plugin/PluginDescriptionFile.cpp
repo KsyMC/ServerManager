@@ -1,12 +1,15 @@
 #include <fstream>
 
 #include "PluginDescriptionFile.h"
+#include "../permissions/Permission.h"
+#include "../util/SMUtil.h"
 #include "../version.h"
 
 PluginDescriptionFile::PluginDescriptionFile(const std::string &path)
 {
 	loaded = false;
 	order = PluginLoadOrder::POSTWORLD;
+	defaultPerm = PermissionDefault::OP;
 	loadJson(path);
 }
 
@@ -15,8 +18,9 @@ PluginDescriptionFile::PluginDescriptionFile(const std::string &pluginName, cons
 	loaded = false;
 	name = pluginName;
 	version = pluginVersion;
+	defaultPerm = PermissionDefault::OP;
 
-	if(name.find(' ') != std::string::npos)
+	if (name.find(' ') != std::string::npos)
 	{
 		std::string findString = " ";
 		name.replace(name.find(findString), findString.length(), "_");
@@ -26,7 +30,7 @@ PluginDescriptionFile::PluginDescriptionFile(const std::string &pluginName, cons
 void PluginDescriptionFile::loadJson(const std::string &path)
 {
 	std::ifstream ifs(path, std::ifstream::binary);
-	if(!ifs.is_open())
+	if (!ifs.is_open())
 	{
 		ifs.close();
 		return;
@@ -36,43 +40,43 @@ void PluginDescriptionFile::loadJson(const std::string &path)
 	ifs >> root;
 	ifs.close();
 
-	if(!root.isMember("name") ||
-			!root.isMember("version") ||
-			!root.isMember("sm-version"))
+	if (!root.isMember("name") ||
+		!root.isMember("version") ||
+		!root.isMember("sm-version"))
 		return;
 
 	name = root.get("name", "").asString("");
 	version = root.get("version", "").asString("");
 
-	if(root["sm-version"].isArray())
+	if (root["sm-version"].isArray())
 	{
-		for(Json::Value smVersion : root["sm-version"])
+		for (Json::Value smVersion : root["sm-version"])
 			smVersions.push_back(smVersion.asInt(0));
 	}
 	else
 		smVersions.push_back(root.get("sm-version", 0).asInt(0));
 
-	if(root.isMember("commands"))
+	if (root.isMember("commands"))
 	{
-		if(!root["commands"].isObject())
+		if (!root["commands"].isObject())
 			return;
 
 		int cmdIndex = 0;
 		Json::Value::Members cmdNames = root["commands"].getMemberNames();
-		for(Json::Value command : root["commands"])
+		for (Json::Value command : root["commands"])
 		{
 			std::map<std::string, CommandDescValue> valueMap;
-			if(command.isObject())
+			if (command.isObject())
 			{
 				int cmdValueIndex = 0;
 				Json::Value::Members cmdValueNames = command.getMemberNames();
-				for(Json::Value commandEntry : command)
+				for (Json::Value commandEntry : command)
 				{
 					CommandDescValue value;
-					if(commandEntry.isArray())
+					if (commandEntry.isArray())
 					{
 						std::vector<std::string> subValues;
-						for(Json::Value commandSubListItem : commandEntry)
+						for (Json::Value commandSubListItem : commandEntry)
 							subValues.push_back(commandSubListItem.asString(""));
 
 						value.isArray = true;
@@ -98,17 +102,23 @@ void PluginDescriptionFile::loadJson(const std::string &path)
 	description = root.get("description", "").asString("");
 
 	std::string load = root.get("load", "").asString("");
-	if(!load.compare("POSTWORLD"))
+	if (!load.compare("POSTWORLD"))
 		order = PluginLoadOrder::POSTWORLD;
-	else if(!load.compare("STARTUP"))
+	else if (!load.compare("STARTUP"))
 		order = PluginLoadOrder::STARTUP;
 
-	if(root.isMember("author"))
+	if (root.isMember("author"))
 		authors.push_back(root.get("author", "").asString(""));
 
-	if(root.isMember("authors") && root["authors"].isArray())
-		for(Json::Value author : root["authors"])
+	if (root.isMember("authors") && root["authors"].isArray())
+		for (Json::Value author : root["authors"])
 			authors.push_back(author.asString(""));
+
+	if (root.isMember("default-permission"))
+		defaultPerm = Permission::getDefaultByName(root.get("default-permission", "").asString(""));
+
+	if (root.isMember("permissions") && root["permissions"].isObject())
+		lazyPermissions = root["permissions"];
 
 	prefix = root.get("prefix", "").asString("");
 	loaded = true;
@@ -116,15 +126,15 @@ void PluginDescriptionFile::loadJson(const std::string &path)
 
 std::vector<std::string> PluginDescriptionFile::makePluginNameList(Json::Value root, const std::string &key)
 {
-	if(root.isMember(key) && root[key].isArray())
+	if (root.isMember(key) && root[key].isArray())
 	{
 		std::vector<std::string> list;
-		for(Json::Value value : root[key])
+		for (Json::Value value : root[key])
 			list.push_back(value.asString(""));
 
 		return list;
 	}
-	return {};
+	return{};
 }
 
 bool PluginDescriptionFile::isLoaded() const
@@ -190,6 +200,24 @@ const std::string &PluginDescriptionFile::getPrefix() const
 const std::map<std::string, std::map<std::string, PluginDescriptionFile::CommandDescValue>> &PluginDescriptionFile::getCommands() const
 {
 	return commands;
+}
+
+std::vector<Permission*> PluginDescriptionFile::getPermissions()
+{
+	if (permissions.empty())
+	{
+		if (!lazyPermissions.empty())
+		{
+			permissions = Permission::loadPermissions(lazyPermissions, defaultPerm);
+			lazyPermissions.clear();
+		}
+	}
+	return permissions;
+}
+
+PermissionDefault PluginDescriptionFile::getPermissionDefault() const
+{
+	return defaultPerm;
 }
 
 std::string PluginDescriptionFile::getFullName() const

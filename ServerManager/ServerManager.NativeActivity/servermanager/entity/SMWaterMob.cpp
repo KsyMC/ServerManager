@@ -1,5 +1,5 @@
 #include "SMWaterMob.h"
-#include "minecraftpe/entity/WaterAnimal.h"
+#include "minecraftpe/world/entity/WaterAnimal.h"
 
 SMWaterMob::SMWaterMob(Server *server, WaterAnimal *entity)
 	: SMAgableMob(server, entity)

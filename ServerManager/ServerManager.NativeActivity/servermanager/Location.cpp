@@ -2,8 +2,8 @@
 
 #include "Location.h"
 #include "level/SMBlockSource.h"
-#include "minecraftpe/level/BlockSource.h"
-#include "minecraftpe/block/BlockPos.h"
+#include "minecraftpe/world/level/BlockSource.h"
+#include "minecraftpe/world/level/BlockPos.h"
 
 Location::Location()
 {

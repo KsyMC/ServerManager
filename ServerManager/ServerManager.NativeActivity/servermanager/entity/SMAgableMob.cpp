@@ -1,5 +1,5 @@
 #include "SMAgableMob.h"
-#include "minecraftpe/entity/AgableMob.h"
+#include "minecraftpe/world/entity/AgableMob.h"
 
 SMAgableMob::SMAgableMob(Server *server, AgableMob *entity)
 	: SMPathfinderMob(server, entity)

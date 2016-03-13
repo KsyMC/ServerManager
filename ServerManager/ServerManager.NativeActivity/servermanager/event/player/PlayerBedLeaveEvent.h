@@ -1,7 +1,7 @@
 #pragma once
 
 #include "PlayerEvent.h"
-#include "minecraftpe/block/FullBlock.h"
+#include "minecraftpe/CommonTypes.h"
 
 class PlayerBedLeaveEvent : public PlayerEvent
 {

@@ -1,2 +1,1 @@
-#define VERSION_CODE 18
-#define VERSION_NAME "4.2.3"
+#define VERSION_CODE 19

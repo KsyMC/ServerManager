@@ -6,6 +6,9 @@
 #include <json/json.h>
 
 #include "PluginLoadOrder.h"
+#include "../permissions/PermissionDefault.h"
+
+class Permission;
 
 class PluginDescriptionFile
 {
@@ -32,6 +35,9 @@ private:
 	std::string website;
 	std::string prefix;
 	PluginLoadOrder order;
+	Json::Value lazyPermissions;
+	std::vector<Permission *> permissions;
+	PermissionDefault defaultPerm;
 
 public:
 	PluginDescriptionFile(const std::string &path);
@@ -56,5 +62,7 @@ public:
 	const std::vector<std::string> &getLoadBefore() const;
 	const std::string &getPrefix() const;
 	const std::map<std::string, std::map<std::string, CommandDescValue>> &getCommands() const;
+	std::vector<Permission *> getPermissions();
+	PermissionDefault getPermissionDefault() const;
 	std::string getFullName() const;
 };

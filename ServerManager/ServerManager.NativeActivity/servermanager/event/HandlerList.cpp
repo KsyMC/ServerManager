@@ -1,5 +1,3 @@
-#include <algorithm>
-
 #include "HandlerList.h"
 #include "../plugin/RegisteredListener.h"
 
@@ -100,7 +98,6 @@ void HandlerList::unregister(Plugin *plugin)
 
 void HandlerList::unregister(Listener *listener)
 {
-	bool changed = false;
 	for(auto &listIter : handlerslots)
 	{
 		for(auto it = listIter.second.begin(); it != listIter.second.end();)
@@ -148,6 +145,8 @@ std::vector<RegisteredListener *> HandlerList::getRegisteredListeners(Plugin *pl
 			for(RegisteredListener *listener : it.second)
 				if(listener->getPlugin() == plugin)
 					listeners.push_back(listener);
+
+	return listeners;
 }
 
 const std::vector<HandlerList *> &HandlerList::getHandlerLists()

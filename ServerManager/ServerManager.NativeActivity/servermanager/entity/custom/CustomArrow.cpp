@@ -2,25 +2,25 @@
 #include "../../ServerManager.h"
 #include "../../event/player/PlayerPickupItemEvent.h"
 #include "../../plugin/PluginManager.h"
-#include "minecraftpe/entity/Arrow.h"
-#include "minecraftpe/entity/player/Inventory.h"
-#include "minecraftpe/level/Level.h"
-#include "minecraftpe/item/Item.h"
+#include "minecraftpe/world/entity/projectile/Arrow.h"
+#include "minecraftpe/world/entity/player/Inventory.h"
+#include "minecraftpe/world/level/Level.h"
+#include "minecraftpe/world/item/Item.h"
 #include "Substrate.h"
 
 void(*CustomArrow::playerTouch_real)(Arrow *real, Player &player);
 void CustomArrow::playerTouch(Arrow *real, Player &player)
 {
-	if(!real->level->isClientSide() && real->getEnchantInfinity() == 0)
+	if (!real->level->isClientSide() && real->getEnchantInfinity() == 0)
 	{
 		ItemInstance arrowItem(Item::mArrow, 1);
-		if(!real->onGround || !real->fromPlayer || real->shakeTime > 0 || player.inventory->canAdd(arrowItem))
+		if (!real->onGround || !real->fromPlayer || real->shakeTime > 0 || player.inventory->canAdd(arrowItem))
 			return;
 
 		PlayerPickupItemEvent event(ServerManager::getServer()->getPlayer(&player), &arrowItem, 0);
 		ServerManager::getPluginManager()->callEvent(event);
 
-		if(event.isCancelled())
+		if (event.isCancelled())
 			return;
 	}
 	playerTouch_real(real, player);

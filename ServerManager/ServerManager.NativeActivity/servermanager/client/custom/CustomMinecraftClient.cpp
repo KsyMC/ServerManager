@@ -2,9 +2,10 @@
 
 #include "CustomMinecraftClient.h"
 #include "../../ServerManager.h"
-#include "minecraftpe/client/AppPlatform.h"
-#include "minecraftpe/client/MinecraftClient.h"
+#include "minecraftpe/AppPlatform.h"
+#include "minecraftpe/client/game/MinecraftClient.h"
 #include "Substrate.h"
+#include "log.h"
 
 void(*CustomMinecraftClient::init_real)(MinecraftClient *client);
 void CustomMinecraftClient::init(MinecraftClient *client)

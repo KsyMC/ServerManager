@@ -14,7 +14,7 @@ private:
 public:
 	PluginCommand(const std::string &name, Plugin *owner);
 
-	bool execute(SMPlayer *sender, std::string &label, std::vector<std::string> &args);
+	bool execute(CommandSender *sender, std::string &label, std::vector<std::string> &args);
 
 	bool isPluginCommand() const;
 

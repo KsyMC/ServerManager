@@ -1,29 +1,35 @@
 #include "DeopCommand.h"
 #include "../../ServerManager.h"
-#include "../../entity/SMPlayer.h"
+#include "../../entity/player/SMPlayer.h"
+#include "../../ChatColor.h"
 
 DeopCommand::DeopCommand()
 	: VanillaCommand("deop")
 {
 	description = "Takes the specified player's operator status";
 	usageMessage = "%commands.deop.usage";
+	setPermission("servermanager.command.op.take");
 }
 
-bool DeopCommand::execute(SMPlayer *sender, std::string &label, std::vector<std::string> &args)
+bool DeopCommand::execute(CommandSender *sender, std::string &label, std::vector<std::string> &args)
 {
-	if((int)args.size() != 1 || args[0].empty())
+	if (!testPermission(sender)) return true;
+	if ((int)args.size() != 1 || args[0].empty())
 	{
-		sender->sendTranslation("§c%commands.generic.usage", {usageMessage});
+		sender->sendTranslation(ChatColor::RED + "%commands.generic.usage", { usageMessage });
 		return false;
 	}
 
-	ServerManager::getServer()->removeOp(args[0]);
-
 	SMPlayer *player = ServerManager::getPlayerExact(args[0]);
-	if(player)
-		player->sendMessage("§7You are no longer op!");
+	if (player)
+	{
+		player->setOp(false);
+		player->sendMessage(ChatColor::GRAY + "You are no longer op!");
+	}
+	else
+		ServerManager::getServer()->removeOp(args[0]);
 
-	Command::broadcastCommandTranslation(sender, "commands.deop.success", {args[0]});
+	Command::broadcastCommandTranslation(sender, "commands.deop.success", { args[0] });
 
 	return true;
 }

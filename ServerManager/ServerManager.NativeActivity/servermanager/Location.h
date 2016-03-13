@@ -1,8 +1,8 @@
 #pragma once
 
-#include "minecraftpe/util/Vec3.h"
-#include "minecraftpe/util/Vec2.h"
-#include "minecraftpe/block/FullBlock.h"
+#include "minecraftpe/world/phys/Vec3.h"
+#include "minecraftpe/world/phys/Vec2.h"
+#include "minecraftpe/CommonTypes.h"
 
 class SMBlockSource;
 

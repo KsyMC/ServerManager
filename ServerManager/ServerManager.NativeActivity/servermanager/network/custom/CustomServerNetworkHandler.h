@@ -3,7 +3,7 @@
 #include <string>
 #include <raknet/RakNetTypes.h>
 
-#include "minecraftpe/entity/player/ServerPlayer.h"
+#include "minecraftpe/server/ServerPlayer.h"
 
 class ServerNetworkHandler;
 class LoginPacket;
@@ -37,9 +37,6 @@ public:
 
 	static void(*disconnectClient_real)(ServerNetworkHandler *, const RakNet::RakNetGUID &, const std::string &);
 	static void disconnectClient(ServerNetworkHandler *, const RakNet::RakNetGUID &, const std::string &);
-
-	static bool(*allowIncomingPacketId_real)(ServerNetworkHandler *, const RakNet::RakNetGUID &, int);
-	static bool allowIncomingPacketId(ServerNetworkHandler *, const RakNet::RakNetGUID &, int);
 
 	static void(*handleLogin_real)(ServerNetworkHandler *, const RakNet::RakNetGUID &, LoginPacket *);
 	static void handleLogin(ServerNetworkHandler *, const RakNet::RakNetGUID &, LoginPacket *);

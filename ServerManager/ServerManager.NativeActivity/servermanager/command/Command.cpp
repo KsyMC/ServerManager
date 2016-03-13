@@ -1,10 +1,12 @@
 #include "Command.h"
 #include "../ServerManager.h"
-#include "../entity/SMPlayer.h"
+#include "../entity/player/SMPlayer.h"
 #include "../level/SMLevel.h"
 #include "../command/CommandMap.h"
+#include "../plugin/PluginManager.h"
 #include "../util/SMUtil.h"
-#include "minecraftpe/client/resources/I18n.h"
+#include "../ChatColor.h"
+#include "minecraftpe/locale/I18n.h"
 
 Command::Command(const std::string &name, const std::string &description, const std::string &usageMessage, const std::vector<std::string> &aliases)
 {
@@ -32,12 +34,12 @@ bool Command::isPluginCommand() const
 	return false;
 }
 
-std::string Command::getName() const
+const std::string &Command::getName() const
 {
 	return name;
 }
 
-std::string Command::getDescription() const
+const std::string &Command::getDescription() const
 {
 	return description;
 }
@@ -45,6 +47,60 @@ std::string Command::getDescription() const
 void Command::setDescription(const std::string &description)
 {
 	this->description = description;
+}
+
+const std::string &Command::getPermission() const
+{
+	return permission;
+}
+
+void Command::setPermission(const std::string &permission)
+{
+	this->permission = permission;
+}
+
+bool Command::testPermission(CommandSender *target)
+{
+	if (testPermissionSilent(target))
+		return true;
+
+	if (permissionMessage.empty())
+		target->sendTranslation(ChatColor::RED + "%commands.generic.permission", {});
+	else
+	{
+		std::string message = permissionMessage;
+		if (message.find("<permission>") != std::string::npos)
+		{
+			std::string findString = "<permission>";
+			message.replace(message.find(findString), findString.length(), permission);
+		}
+
+		for (std::string line : SMUtil::split(message, '\n'))
+			target->sendMessage(line);
+	}
+	return false;
+}
+
+bool Command::testPermissionSilent(CommandSender *target)
+{
+	if (permission.empty())
+		return true;
+
+	for (std::string p : SMUtil::split(permission, ';'))
+		if (target->hasPermission(p))
+			return true;
+
+	return false;
+}
+
+const std::string &Command::getPermissionMessage() const
+{
+	return permissionMessage;
+}
+
+void Command::setPermissionMessage(const std::string &permissionMessage)
+{
+	this->permissionMessage = permissionMessage;
 }
 
 std::vector<std::string> Command::getAliases() const
@@ -89,6 +145,11 @@ bool Command::isRegistered() const
 	return commandMap != NULL;
 }
 
+bool Command::allowChangesFrom(CommandMap *commandMap)
+{
+	return !this->commandMap || this->commandMap == commandMap;
+}
+
 bool Command::setLabel(const std::string &name)
 {
 	nextLabel = label;
@@ -115,39 +176,40 @@ std::string Command::getUsage() const
 	return usageMessage;
 }
 
-void Command::broadcastCommandMessage(SMPlayer *source, const std::string &message, bool sendToSource)
+void Command::broadcastCommandMessage(CommandSender *source, const std::string &message, bool sendToSource)
 {
-	std::string newMessage = message;
-	newMessage = "§7§o[" + source->getName() + ": " + (I18n::get(message).compare(message) ? "%" : "") + message + "]";
+	std::vector<Permissible *> users = ServerManager::getPluginManager()->getPermissionSubscriptions(Server::BROADCAST_CHANNEL_ADMINISTRATIVE);
+	std::string colored = ChatColor::GRAY + ChatColor::ITALIC + "[" + source->getName() + ": " + message + "]";
 
-	std::vector<SMPlayer *> players = ServerManager::getOnlinePlayers();
-	for (int i = 0; i < players.size(); ++i)
+	for (size_t i = 0; i < users.size(); ++i)
 	{
-		SMPlayer *player = players[i];
-		if (player == source && !sendToSource)
-			continue;
+		Permissible *user = users[i];
+		if (user->isCommandSender())
+		{
+			CommandSender *target = (CommandSender *)user;
+			if (target == source && !sendToSource)
+				continue;
 
-		player->sendMessage(newMessage);
+			target->sendMessage(colored);
+		}
 	}
 }
 
-void Command::broadcastCommandTranslation(SMPlayer *source, const std::string &message, const std::vector<std::string> &params, bool sendToSource)
+void Command::broadcastCommandTranslation(CommandSender *source, const std::string &message, const std::vector<std::string> &params, bool sendToSource)
 {
-	std::string newMessage = message;
-	newMessage = "§7§o[" + source->getName() + ": " + (I18n::get(message).compare(message) ? "%" : "") + message + "]";
-
-	std::vector<SMPlayer *> players = ServerManager::getOnlinePlayers();
-	for (int i = 0; i < players.size(); ++i)
+	std::vector<Permissible *> users = ServerManager::getPluginManager()->getPermissionSubscriptions(Server::BROADCAST_CHANNEL_ADMINISTRATIVE);
+	std::string colored = ChatColor::GRAY + ChatColor::ITALIC + "[" + source->getName() + ": " + (I18n::get(message).compare(message) ? "%" : "") + message + "]";
+	
+	for (size_t i = 0; i < users.size(); ++i)
 	{
-		SMPlayer *player = players[i];
-		if (player == source && !sendToSource)
-			continue;
+		Permissible *user = users[i];
+		if (user->isCommandSender())
+		{
+			CommandSender *target = (CommandSender *)user;
+			if (target == source && !sendToSource)
+				continue;
 
-		player->sendTranslation(newMessage, params);
+			target->sendTranslation(colored, params);
+		}
 	}
-}
-
-bool Command::allowChangesFrom(CommandMap *commandMap)
-{
-	return !this->commandMap || this->commandMap == commandMap;
 }

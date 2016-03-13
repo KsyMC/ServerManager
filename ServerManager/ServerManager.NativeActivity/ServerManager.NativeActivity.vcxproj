@@ -78,7 +78,7 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>Gcc_4_9</PlatformToolset>
-    <AndroidAPILevel>android-14</AndroidAPILevel>
+    <AndroidAPILevel>android-21</AndroidAPILevel>
     <UseOfStl>gnustl_shared</UseOfStl>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
@@ -149,16 +149,13 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <CompileAs>CompileAsCpp</CompileAs>
       <AdditionalIncludeDirectories>C:\workspace\Android\MCPE\include;C:\workspace\Android\curl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CppLanguageStandard>c++11</CppLanguageStandard>
+      <CompileAs>CompileAsCpp</CompileAs>
     </ClCompile>
     <Link>
-      <LibraryDependencies>%(LibraryDependencies);minecraftpe;mcpelauncher_tinysubstrate;z;curl;crypto;ssl</LibraryDependencies>
+      <LibraryDependencies>%(LibraryDependencies);minecraftpe;mcpelauncher_tinysubstrate;z;m;curl;crypto;ssl</LibraryDependencies>
       <AdditionalLibraryDirectories>C:\workspace\Android\MCPE\lib;C:\workspace\Android\curl\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>
-      </AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
@@ -212,12 +209,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\MCPE\include\minecraftpe\network\Packet.cpp" />
+    <ClCompile Include="..\..\..\MCPE\include\minecraftpe\network\packet\DisconnectPacket.cpp" />
+    <ClCompile Include="..\..\..\MCPE\include\minecraftpe\network\packet\PlayStatusPacket.cpp" />
+    <ClCompile Include="..\..\..\MCPE\include\minecraftpe\network\packet\TextPacket.cpp" />
     <ClCompile Include="hook\hook.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="servermanager\BanEntry.cpp" />
     <ClCompile Include="servermanager\BanList.cpp" />
     <ClCompile Include="servermanager\blockentity\SMBlockEntity.cpp" />
     <ClCompile Include="servermanager\block\SMBlock.cpp" />
+    <ClCompile Include="servermanager\ChatColor.cpp" />
     <ClCompile Include="servermanager\client\custom\CustomMinecraftClient.cpp" />
     <ClCompile Include="servermanager\client\gui\custom\CustomChatScreen.cpp" />
     <ClCompile Include="servermanager\client\settings\SMOptions.cpp" />
@@ -244,33 +246,33 @@
     <ClCompile Include="servermanager\command\defaults\VanillaCommand.cpp" />
     <ClCompile Include="servermanager\command\defaults\WhitelistCommand.cpp" />
     <ClCompile Include="servermanager\command\PluginCommand.cpp" />
+    <ClCompile Include="servermanager\command\PluginCommandJsonParser.cpp" />
+    <ClCompile Include="servermanager\entity\animal\SMAnimal.cpp" />
+    <ClCompile Include="servermanager\entity\animal\SMChicken.cpp" />
+    <ClCompile Include="servermanager\entity\animal\SMCow.cpp" />
+    <ClCompile Include="servermanager\entity\animal\SMMushroomCow.cpp" />
+    <ClCompile Include="servermanager\entity\animal\SMPig.cpp" />
+    <ClCompile Include="servermanager\entity\animal\SMSheep.cpp" />
     <ClCompile Include="servermanager\entity\custom\CustomArrow.cpp" />
     <ClCompile Include="servermanager\entity\custom\CustomCreeper.cpp" />
     <ClCompile Include="servermanager\entity\custom\CustomItemEntity.cpp" />
     <ClCompile Include="servermanager\entity\custom\CustomLocalPlayer.cpp" />
     <ClCompile Include="servermanager\entity\custom\CustomPlayer.cpp" />
+    <ClCompile Include="servermanager\entity\item\SMBoat.cpp" />
+    <ClCompile Include="servermanager\entity\item\SMItemEntity.cpp" />
+    <ClCompile Include="servermanager\entity\monster\SMBlaze.cpp" />
+    <ClCompile Include="servermanager\entity\monster\SMCreeper.cpp" />
+    <ClCompile Include="servermanager\entity\monster\SMEnderman.cpp" />
+    <ClCompile Include="servermanager\entity\monster\SMMonster.cpp" />
+    <ClCompile Include="servermanager\entity\monster\SMSkeleton.cpp" />
+    <ClCompile Include="servermanager\entity\monster\SMZombie.cpp" />
+    <ClCompile Include="servermanager\entity\player\SMPlayer.cpp" />
+    <ClCompile Include="servermanager\entity\projectile\SMArrow.cpp" />
     <ClCompile Include="servermanager\entity\SMAgableMob.cpp" />
-    <ClCompile Include="servermanager\entity\SMAnimal.cpp" />
-    <ClCompile Include="servermanager\entity\SMArrow.cpp" />
-    <ClCompile Include="servermanager\entity\SMBlaze.cpp" />
-    <ClCompile Include="servermanager\entity\SMBoat.cpp" />
-    <ClCompile Include="servermanager\entity\SMChicken.cpp" />
-    <ClCompile Include="servermanager\entity\SMCow.cpp" />
-    <ClCompile Include="servermanager\entity\SMCreeper.cpp" />
-    <ClCompile Include="servermanager\entity\SMEnderman.cpp" />
     <ClCompile Include="servermanager\entity\SMEntity.cpp" />
-    <ClCompile Include="servermanager\entity\SMItemEntity.cpp" />
-    <ClCompile Include="servermanager\entity\SMLocalPlayer.cpp" />
     <ClCompile Include="servermanager\entity\SMMob.cpp" />
-    <ClCompile Include="servermanager\entity\SMMonster.cpp" />
-    <ClCompile Include="servermanager\entity\SMMushroomCow.cpp" />
     <ClCompile Include="servermanager\entity\SMPathfinderMob.cpp" />
-    <ClCompile Include="servermanager\entity\SMPig.cpp" />
-    <ClCompile Include="servermanager\entity\SMPlayer.cpp" />
-    <ClCompile Include="servermanager\entity\SMSheep.cpp" />
-    <ClCompile Include="servermanager\entity\SMSkeleton.cpp" />
     <ClCompile Include="servermanager\entity\SMWaterMob.cpp" />
-    <ClCompile Include="servermanager\entity\SMZombie.cpp" />
     <ClCompile Include="servermanager\event\block\BlockBreakEvent.cpp" />
     <ClCompile Include="servermanager\event\block\BlockEvent.cpp" />
     <ClCompile Include="servermanager\event\block\BlockExpEvent.cpp" />
@@ -292,6 +294,7 @@
     <ClCompile Include="servermanager\event\player\PlayerGameModeChangeEvent.cpp" />
     <ClCompile Include="servermanager\event\player\PlayerInteractEvent.cpp" />
     <ClCompile Include="servermanager\event\player\PlayerJoinEvent.cpp" />
+    <ClCompile Include="servermanager\event\player\PlayerKickEvent.cpp" />
     <ClCompile Include="servermanager\event\player\PlayerLoginEvent.cpp" />
     <ClCompile Include="servermanager\event\player\PlayerMoveEvent.cpp" />
     <ClCompile Include="servermanager\event\player\PlayerPickupItemEvent.cpp" />
@@ -307,6 +310,10 @@
     <ClCompile Include="servermanager\Location.cpp" />
     <ClCompile Include="servermanager\network\custom\CustomRakNetInstance.cpp" />
     <ClCompile Include="servermanager\network\custom\CustomServerNetworkHandler.cpp" />
+    <ClCompile Include="servermanager\permissions\PermissibleBase.cpp" />
+    <ClCompile Include="servermanager\permissions\Permission.cpp" />
+    <ClCompile Include="servermanager\permissions\PermissionAttachment.cpp" />
+    <ClCompile Include="servermanager\permissions\PermissionAttachmentInfo.cpp" />
     <ClCompile Include="servermanager\plugin\PluginBase.cpp" />
     <ClCompile Include="servermanager\plugin\PluginDescriptionFile.cpp" />
     <ClCompile Include="servermanager\plugin\PluginManager.cpp" />
@@ -314,22 +321,229 @@
     <ClCompile Include="servermanager\Server.cpp" />
     <ClCompile Include="servermanager\ServerManager.cpp" />
     <ClCompile Include="servermanager\SMList.cpp" />
+    <ClCompile Include="servermanager\util\permissions\BroadcastPermissions.cpp" />
+    <ClCompile Include="servermanager\util\permissions\CommandPermissions.cpp" />
+    <ClCompile Include="servermanager\util\permissions\DefaultPermissions.cpp" />
     <ClCompile Include="servermanager\util\SMUtil.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\MCPE\include\json\assertions.h" />
+    <ClInclude Include="..\..\..\MCPE\include\json\autolink.h" />
+    <ClInclude Include="..\..\..\MCPE\include\json\config.h" />
+    <ClInclude Include="..\..\..\MCPE\include\json\features.h" />
+    <ClInclude Include="..\..\..\MCPE\include\json\forwards.h" />
+    <ClInclude Include="..\..\..\MCPE\include\json\json.h" />
+    <ClInclude Include="..\..\..\MCPE\include\json\reader.h" />
+    <ClInclude Include="..\..\..\MCPE\include\json\value.h" />
+    <ClInclude Include="..\..\..\MCPE\include\json\version.h" />
+    <ClInclude Include="..\..\..\MCPE\include\json\writer.h" />
+    <ClInclude Include="..\..\..\MCPE\include\log.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\App.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\AppPlatform.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\AppPlatformListener.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\AppPlatform_android.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\gamemode\CreativeMode.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\gamemode\GameMode.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\gamemode\SurvivalMode.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\game\ClientSkinInfoData.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\game\GameCallbacks.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\game\MinecraftClient.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\game\ServerSkinInfoData.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\game\SkinInfoData.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\game\SkinInfoFactory.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\game\Vibration.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\gui\components\GuiElement.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\gui\components\GuiElementContainer.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\gui\components\OptionsGroup.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\gui\components\OptionsPane.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\gui\gui\Gui.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\gui\gui\GuiComponent.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\gui\gui\ScreenRenderer.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\gui\screens\ChatScreen.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\gui\screens\OptionsScreen.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\gui\screens\StartMenuScreen.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\gui\screens\UIScreenType.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\multiplayer\MultiPlayerLevel.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\options\Options.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\options\Whitelist.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\options\WhitelistFile.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\player\LocalPlayer.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\player\RemotePlayer.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\renderer\texture\TextureUVCoordinateSet.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\CommonTypes.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\locale\I18n.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\nbt\ByteArrayTag.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\nbt\ByteTag.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\nbt\CompoundTag.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\nbt\DoubleTag.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\nbt\EndTag.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\nbt\FloatTag.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\nbt\Int64Tag.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\nbt\IntArrayTag.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\nbt\IntTag.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\nbt\ListTag.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\nbt\NamedTag.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\nbt\ShortTag.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\nbt\StringTag.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\nbt\Tag.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\BatchedPacketSender.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\ClientNetworkHandler.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\LegacyClientNetworkHandler.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\MinecraftPackets.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\NetEventCallback.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\Packet.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\PacketSender.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\packet\AddEntityPacket.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\packet\AddPlayerPacket.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\packet\AnimatePacket.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\packet\BatchPacket.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\packet\BlockEntityDataPacket.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\packet\ContainerSetContentPacket.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\packet\ContainerSetSlotPacket.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\packet\DisconnectPacket.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\packet\DropItemPacket.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\packet\LoginPacket.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\packet\MovePlayerPacket.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\packet\PlayerActionPacket.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\packet\PlayStatusPacket.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\packet\RemoveBlockPacket.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\packet\TextPacket.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\packet\UseItemPacket.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\RakNetInstance.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\ServerNetworkHandler.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\platform\input\Controller.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\platform\threading\BackgroundWorker.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\platform\threading\WorkerPool.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\SavedData.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\server\ServerCommandParser.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\server\ServerLevel.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\server\ServerPlayer.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\SharedAttributes.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\SharedConstants.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\util\DataIO.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\util\File.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\util\NewType.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\util\Random.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\util\Token.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\util\Util.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\util\UUID.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\Container.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\AgableMob.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\animal\Animal.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\animal\Chicken.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\animal\Cow.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\animal\MushroomCow.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\animal\Pig.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\animal\Sheep.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\ArmorSlot.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\Attribute.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\AttributeInstance.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\Entity.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\EntityClassTree.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\EntityDamageByBlockSource.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\EntityDamageByChildEntitySource.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\EntityDamageByEntitySource.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\EntityDamageCause.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\EntityDamageSource.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\EntityLink.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\EntityPos.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\EntityRendererId.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\EntityType.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\EntityUniqueID.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\item\Boat.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\item\ItemEntity.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\Mob.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\monster\Blaze.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\monster\Creeper.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\monster\Enderman.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\monster\Monster.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\monster\Skeleton.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\monster\Zombie.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\ParticleType.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\PathfinderMob.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\player\Abilities.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\player\Inventory.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\player\Player.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\projectile\Arrow.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\RemovedEntityDamageByType.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\SynchedEntityData.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\WaterAnimal.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\event\EntityEvent.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\event\LevelEvent.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\food\SimpleFoodData.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\game\User.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\inventory\BaseContainerMenu.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\inventory\ContainerType.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\inventory\FillingContainer.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\inventory\InventoryMenu.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\item\ArmorItem.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\item\CreativeItemCategory.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\item\Item.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\item\ItemInstance.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\item\UseAnimation.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\BlockPos.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\BlockSource.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\BlockSourceListener.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\block\Block.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\block\BlockProperty.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\block\entity\BlockEntity.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\block\entity\BlockEntityType.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\block\MaterialType.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\Brightness.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\ChunkPos.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\ChunkSource.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\Difficulty.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\Dimension.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\DimensionId.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\GameType.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\GeneratorType.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\Level.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\LevelListener.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\LevelSettings.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\PlayerChunkSource.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\storage\DBStorage.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\storage\LevelData.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\storage\LevelStorage.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\storage\StorageVersion.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\Minecraft.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\phys\AABB.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\phys\HitResult.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\phys\Vec2.h" />
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\phys\Vec3.h" />
+    <ClInclude Include="..\..\..\MCPE\include\raknet\BitStream.h" />
+    <ClInclude Include="..\..\..\MCPE\include\raknet\DS_List.h" />
+    <ClInclude Include="..\..\..\MCPE\include\raknet\Export.h" />
+    <ClInclude Include="..\..\..\MCPE\include\raknet\Itoa.h" />
+    <ClInclude Include="..\..\..\MCPE\include\raknet\NativeTypes.h" />
+    <ClInclude Include="..\..\..\MCPE\include\raknet\PacketPriority.h" />
+    <ClInclude Include="..\..\..\MCPE\include\raknet\RakAlloca.h" />
+    <ClInclude Include="..\..\..\MCPE\include\raknet\RakAssert.h" />
+    <ClInclude Include="..\..\..\MCPE\include\raknet\RakMemoryOverride.h" />
+    <ClInclude Include="..\..\..\MCPE\include\raknet\RakNetDefines.h" />
+    <ClInclude Include="..\..\..\MCPE\include\raknet\RakNetDefinesOverrides.h" />
+    <ClInclude Include="..\..\..\MCPE\include\raknet\RakNetTime.h" />
+    <ClInclude Include="..\..\..\MCPE\include\raknet\RakNetTypes.h" />
+    <ClInclude Include="..\..\..\MCPE\include\raknet\RakPeer.h" />
+    <ClInclude Include="..\..\..\MCPE\include\raknet\RakString.h" />
+    <ClInclude Include="..\..\..\MCPE\include\raknet\RakWString.h" />
+    <ClInclude Include="..\..\..\MCPE\include\raknet\SocketIncludes.h" />
+    <ClInclude Include="..\..\..\MCPE\include\raknet\WindowsIncludes.h" />
+    <ClInclude Include="..\..\..\MCPE\include\raknet\XBox360Includes.h" />
+    <ClInclude Include="..\..\..\MCPE\include\Substrate.h" />
     <ClInclude Include="hook\hook.h" />
-    <ClInclude Include="log.h" />
     <ClInclude Include="servermanager\BanEntry.h" />
     <ClInclude Include="servermanager\BanList.h" />
     <ClInclude Include="servermanager\blockentity\SMBlockEntity.h" />
     <ClInclude Include="servermanager\block\BlockFace.h" />
     <ClInclude Include="servermanager\block\SMBlock.h" />
+    <ClInclude Include="servermanager\ChatColor.h" />
     <ClInclude Include="servermanager\client\custom\CustomMinecraftClient.h" />
     <ClInclude Include="servermanager\client\gui\custom\CustomChatScreen.h" />
     <ClInclude Include="servermanager\client\settings\SMOptions.h" />
     <ClInclude Include="servermanager\command\Command.h" />
     <ClInclude Include="servermanager\command\CommandExecutor.h" />
     <ClInclude Include="servermanager\command\CommandMap.h" />
+    <ClInclude Include="servermanager\command\CommandSender.h" />
     <ClInclude Include="servermanager\command\defaults\BanCommand.h" />
     <ClInclude Include="servermanager\command\defaults\BanIpCommand.h" />
     <ClInclude Include="servermanager\command\defaults\BanListCommand.h" />
@@ -351,34 +565,34 @@
     <ClInclude Include="servermanager\command\defaults\VanillaCommand.h" />
     <ClInclude Include="servermanager\command\defaults\WhitelistCommand.h" />
     <ClInclude Include="servermanager\command\PluginCommand.h" />
+    <ClInclude Include="servermanager\command\PluginCommandJsonParser.h" />
     <ClInclude Include="servermanager\command\PluginIdentifiableCommand.h" />
+    <ClInclude Include="servermanager\entity\animal\SMAnimal.h" />
+    <ClInclude Include="servermanager\entity\animal\SMChicken.h" />
+    <ClInclude Include="servermanager\entity\animal\SMCow.h" />
+    <ClInclude Include="servermanager\entity\animal\SMMushroomCow.h" />
+    <ClInclude Include="servermanager\entity\animal\SMPig.h" />
+    <ClInclude Include="servermanager\entity\animal\SMSheep.h" />
     <ClInclude Include="servermanager\entity\custom\CustomArrow.h" />
     <ClInclude Include="servermanager\entity\custom\CustomCreeper.h" />
     <ClInclude Include="servermanager\entity\custom\CustomItemEntity.h" />
     <ClInclude Include="servermanager\entity\custom\CustomLocalPlayer.h" />
     <ClInclude Include="servermanager\entity\custom\CustomPlayer.h" />
+    <ClInclude Include="servermanager\entity\item\SMBoat.h" />
+    <ClInclude Include="servermanager\entity\item\SMItemEntity.h" />
+    <ClInclude Include="servermanager\entity\monster\SMBlaze.h" />
+    <ClInclude Include="servermanager\entity\monster\SMCreeper.h" />
+    <ClInclude Include="servermanager\entity\monster\SMEnderman.h" />
+    <ClInclude Include="servermanager\entity\monster\SMMonster.h" />
+    <ClInclude Include="servermanager\entity\monster\SMSkeleton.h" />
+    <ClInclude Include="servermanager\entity\monster\SMZombie.h" />
+    <ClInclude Include="servermanager\entity\player\SMPlayer.h" />
+    <ClInclude Include="servermanager\entity\projectile\SMArrow.h" />
     <ClInclude Include="servermanager\entity\SMAgableMob.h" />
-    <ClInclude Include="servermanager\entity\SMAnimal.h" />
-    <ClInclude Include="servermanager\entity\SMArrow.h" />
-    <ClInclude Include="servermanager\entity\SMBlaze.h" />
-    <ClInclude Include="servermanager\entity\SMBoat.h" />
-    <ClInclude Include="servermanager\entity\SMChicken.h" />
-    <ClInclude Include="servermanager\entity\SMCow.h" />
-    <ClInclude Include="servermanager\entity\SMCreeper.h" />
-    <ClInclude Include="servermanager\entity\SMEnderman.h" />
     <ClInclude Include="servermanager\entity\SMEntity.h" />
-    <ClInclude Include="servermanager\entity\SMItemEntity.h" />
-    <ClInclude Include="servermanager\entity\SMLocalPlayer.h" />
     <ClInclude Include="servermanager\entity\SMMob.h" />
-    <ClInclude Include="servermanager\entity\SMMonster.h" />
-    <ClInclude Include="servermanager\entity\SMMushroomCow.h" />
     <ClInclude Include="servermanager\entity\SMPathfinderMob.h" />
-    <ClInclude Include="servermanager\entity\SMPig.h" />
-    <ClInclude Include="servermanager\entity\SMPlayer.h" />
-    <ClInclude Include="servermanager\entity\SMSheep.h" />
-    <ClInclude Include="servermanager\entity\SMSkeleton.h" />
     <ClInclude Include="servermanager\entity\SMWaterMob.h" />
-    <ClInclude Include="servermanager\entity\SMZombie.h" />
     <ClInclude Include="servermanager\event\block\Action.h" />
     <ClInclude Include="servermanager\event\block\BlockBreakEvent.h" />
     <ClInclude Include="servermanager\event\block\BlockEvent.h" />
@@ -406,6 +620,7 @@
     <ClInclude Include="servermanager\event\player\PlayerGameModeChangeEvent.h" />
     <ClInclude Include="servermanager\event\player\PlayerInteractEvent.h" />
     <ClInclude Include="servermanager\event\player\PlayerJoinEvent.h" />
+    <ClInclude Include="servermanager\event\player\PlayerKickEvent.h" />
     <ClInclude Include="servermanager\event\player\PlayerLoginEvent.h" />
     <ClInclude Include="servermanager\event\player\PlayerMoveEvent.h" />
     <ClInclude Include="servermanager\event\player\PlayerPickupItemEvent.h" />
@@ -422,6 +637,14 @@
     <ClInclude Include="servermanager\network\custom\CustomRakNetInstance.h" />
     <ClInclude Include="servermanager\network\custom\CustomServerNetworkHandler.h" />
     <ClInclude Include="servermanager\network\PacketID.h" />
+    <ClInclude Include="servermanager\permissions\Permissible.h" />
+    <ClInclude Include="servermanager\permissions\PermissibleBase.h" />
+    <ClInclude Include="servermanager\permissions\Permission.h" />
+    <ClInclude Include="servermanager\permissions\PermissionAttachment.h" />
+    <ClInclude Include="servermanager\permissions\PermissionAttachmentInfo.h" />
+    <ClInclude Include="servermanager\permissions\PermissionDefault.h" />
+    <ClInclude Include="servermanager\permissions\PermissionRemovedExecutor.h" />
+    <ClInclude Include="servermanager\permissions\ServerOperator.h" />
     <ClInclude Include="servermanager\plugin\Plugin.h" />
     <ClInclude Include="servermanager\plugin\PluginBase.h" />
     <ClInclude Include="servermanager\plugin\PluginDescriptionFile.h" />
@@ -431,6 +654,9 @@
     <ClInclude Include="servermanager\Server.h" />
     <ClInclude Include="servermanager\ServerManager.h" />
     <ClInclude Include="servermanager\SMList.h" />
+    <ClInclude Include="servermanager\util\permissions\BroadcastPermissions.h" />
+    <ClInclude Include="servermanager\util\permissions\CommandPermissions.h" />
+    <ClInclude Include="servermanager\util\permissions\DefaultPermissions.h" />
     <ClInclude Include="servermanager\util\SMUtil.h" />
     <ClInclude Include="servermanager\version.h" />
   </ItemGroup>

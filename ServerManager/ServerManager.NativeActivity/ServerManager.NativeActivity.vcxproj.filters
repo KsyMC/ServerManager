@@ -98,72 +98,6 @@
     <ClCompile Include="servermanager\command\defaults\BanIpCommand.cpp">
       <Filter>servermarnager\command\defaults</Filter>
     </ClCompile>
-    <ClCompile Include="servermanager\entity\SMSkeleton.cpp">
-      <Filter>servermarnager\entity</Filter>
-    </ClCompile>
-    <ClCompile Include="servermanager\entity\SMWaterMob.cpp">
-      <Filter>servermarnager\entity</Filter>
-    </ClCompile>
-    <ClCompile Include="servermanager\entity\SMZombie.cpp">
-      <Filter>servermarnager\entity</Filter>
-    </ClCompile>
-    <ClCompile Include="servermanager\entity\SMAgableMob.cpp">
-      <Filter>servermarnager\entity</Filter>
-    </ClCompile>
-    <ClCompile Include="servermanager\entity\SMAnimal.cpp">
-      <Filter>servermarnager\entity</Filter>
-    </ClCompile>
-    <ClCompile Include="servermanager\entity\SMArrow.cpp">
-      <Filter>servermarnager\entity</Filter>
-    </ClCompile>
-    <ClCompile Include="servermanager\entity\SMBlaze.cpp">
-      <Filter>servermarnager\entity</Filter>
-    </ClCompile>
-    <ClCompile Include="servermanager\entity\SMBoat.cpp">
-      <Filter>servermarnager\entity</Filter>
-    </ClCompile>
-    <ClCompile Include="servermanager\entity\SMChicken.cpp">
-      <Filter>servermarnager\entity</Filter>
-    </ClCompile>
-    <ClCompile Include="servermanager\entity\SMCow.cpp">
-      <Filter>servermarnager\entity</Filter>
-    </ClCompile>
-    <ClCompile Include="servermanager\entity\SMCreeper.cpp">
-      <Filter>servermarnager\entity</Filter>
-    </ClCompile>
-    <ClCompile Include="servermanager\entity\SMEnderman.cpp">
-      <Filter>servermarnager\entity</Filter>
-    </ClCompile>
-    <ClCompile Include="servermanager\entity\SMEntity.cpp">
-      <Filter>servermarnager\entity</Filter>
-    </ClCompile>
-    <ClCompile Include="servermanager\entity\SMItemEntity.cpp">
-      <Filter>servermarnager\entity</Filter>
-    </ClCompile>
-    <ClCompile Include="servermanager\entity\SMLocalPlayer.cpp">
-      <Filter>servermarnager\entity</Filter>
-    </ClCompile>
-    <ClCompile Include="servermanager\entity\SMMob.cpp">
-      <Filter>servermarnager\entity</Filter>
-    </ClCompile>
-    <ClCompile Include="servermanager\entity\SMMonster.cpp">
-      <Filter>servermarnager\entity</Filter>
-    </ClCompile>
-    <ClCompile Include="servermanager\entity\SMMushroomCow.cpp">
-      <Filter>servermarnager\entity</Filter>
-    </ClCompile>
-    <ClCompile Include="servermanager\entity\SMPathfinderMob.cpp">
-      <Filter>servermarnager\entity</Filter>
-    </ClCompile>
-    <ClCompile Include="servermanager\entity\SMPig.cpp">
-      <Filter>servermarnager\entity</Filter>
-    </ClCompile>
-    <ClCompile Include="servermanager\entity\SMPlayer.cpp">
-      <Filter>servermarnager\entity</Filter>
-    </ClCompile>
-    <ClCompile Include="servermanager\entity\SMSheep.cpp">
-      <Filter>servermarnager\entity</Filter>
-    </ClCompile>
     <ClCompile Include="servermanager\entity\custom\CustomCreeper.cpp">
       <Filter>servermarnager\entity\custom</Filter>
     </ClCompile>
@@ -308,6 +242,111 @@
     <ClCompile Include="servermanager\client\custom\CustomMinecraftClient.cpp">
       <Filter>servermarnager\client\custom</Filter>
     </ClCompile>
+    <ClCompile Include="servermanager\event\player\PlayerKickEvent.cpp">
+      <Filter>servermarnager\event\player</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\permissions\Permission.cpp">
+      <Filter>servermarnager\permissions</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\permissions\PermissionAttachment.cpp">
+      <Filter>servermarnager\permissions</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\permissions\PermissionAttachmentInfo.cpp">
+      <Filter>servermarnager\permissions</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\util\permissions\DefaultPermissions.cpp">
+      <Filter>servermarnager\util\permissions</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\util\permissions\BroadcastPermissions.cpp">
+      <Filter>servermarnager\util\permissions</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\util\permissions\CommandPermissions.cpp">
+      <Filter>servermarnager\util\permissions</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\command\PluginCommandJsonParser.cpp">
+      <Filter>servermarnager\command</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\permissions\PermissibleBase.cpp">
+      <Filter>servermarnager\permissions</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\ChatColor.cpp">
+      <Filter>servermarnager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\MCPE\include\minecraftpe\network\packet\TextPacket.cpp">
+      <Filter>MCPE\minecraftpe\network\packet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\MCPE\include\minecraftpe\network\packet\PlayStatusPacket.cpp">
+      <Filter>MCPE\minecraftpe\network\packet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\MCPE\include\minecraftpe\network\Packet.cpp">
+      <Filter>MCPE\minecraftpe\network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\MCPE\include\minecraftpe\network\packet\DisconnectPacket.cpp">
+      <Filter>MCPE\minecraftpe\network\packet</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\animal\SMChicken.cpp">
+      <Filter>servermarnager\entity\animal</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\animal\SMCow.cpp">
+      <Filter>servermarnager\entity\animal</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\animal\SMMushroomCow.cpp">
+      <Filter>servermarnager\entity\animal</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\animal\SMPig.cpp">
+      <Filter>servermarnager\entity\animal</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\animal\SMSheep.cpp">
+      <Filter>servermarnager\entity\animal</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\animal\SMAnimal.cpp">
+      <Filter>servermarnager\entity\animal</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\item\SMBoat.cpp">
+      <Filter>servermarnager\entity\item</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\item\SMItemEntity.cpp">
+      <Filter>servermarnager\entity\item</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\monster\SMEnderman.cpp">
+      <Filter>servermarnager\entity\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\monster\SMMonster.cpp">
+      <Filter>servermarnager\entity\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\monster\SMSkeleton.cpp">
+      <Filter>servermarnager\entity\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\monster\SMZombie.cpp">
+      <Filter>servermarnager\entity\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\monster\SMBlaze.cpp">
+      <Filter>servermarnager\entity\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\monster\SMCreeper.cpp">
+      <Filter>servermarnager\entity\monster</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\player\SMPlayer.cpp">
+      <Filter>servermarnager\entity\player</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\projectile\SMArrow.cpp">
+      <Filter>servermarnager\entity\projectile</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\SMEntity.cpp">
+      <Filter>servermarnager\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\SMMob.cpp">
+      <Filter>servermarnager\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\SMPathfinderMob.cpp">
+      <Filter>servermarnager\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\SMWaterMob.cpp">
+      <Filter>servermarnager\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="servermanager\entity\SMAgableMob.cpp">
+      <Filter>servermarnager\entity</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="hook">
@@ -384,6 +423,189 @@
     </Filter>
     <Filter Include="curl">
       <UniqueIdentifier>{8aca09ee-fcf4-45e3-940a-7deb376c6039}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servermarnager\permissions">
+      <UniqueIdentifier>{44e7fc4e-d9b5-4a76-9cee-ae3e7592ec0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servermarnager\util\permissions">
+      <UniqueIdentifier>{b5e49f0d-8341-48fb-9173-200d4ec0f0d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE">
+      <UniqueIdentifier>{622a7438-5807-4a90-b13c-ca50e7cba562}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\json">
+      <UniqueIdentifier>{dace0c3d-b50d-4528-8e93-f688d7c26088}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe">
+      <UniqueIdentifier>{32dc0cb0-7b7f-43c0-a107-fcbe6f240efa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\raknet">
+      <UniqueIdentifier>{f75b853c-3974-4b95-9b60-9b67d9e5aeb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\client">
+      <UniqueIdentifier>{add3dab6-bb3d-409a-8a4c-52f883b7dc7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\locale">
+      <UniqueIdentifier>{7cb5f812-686b-4f00-82a4-1c43c4f033b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\nbt">
+      <UniqueIdentifier>{fb040a09-5dff-4fc1-a20a-c89f21a3ac45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\client\game">
+      <UniqueIdentifier>{e7f5472a-9937-4185-96a5-7b02aba582fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\client\gamemode">
+      <UniqueIdentifier>{03874db4-fe53-4c75-b482-5fb719cd1820}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\client\gui">
+      <UniqueIdentifier>{ca31a52b-24f1-4e41-9b9e-d02c15469d52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\client\gui\gui">
+      <UniqueIdentifier>{5244be20-ee27-477f-a37c-9f4092cd7a21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\client\gui\screens">
+      <UniqueIdentifier>{0375b84b-01d1-4525-900d-6be32134aded}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\client\gui\components">
+      <UniqueIdentifier>{e8f15c9f-d596-405a-85c2-a84f7cff904f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\client\multiplayer">
+      <UniqueIdentifier>{0ca6b040-23f7-45fd-9e51-649e4963bdd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\client\options">
+      <UniqueIdentifier>{18fa5d5d-ca8f-46e6-87dc-b591ad48f0be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\client\player">
+      <UniqueIdentifier>{abbacb7c-b253-4296-b1d0-bf8efcdfef65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\network">
+      <UniqueIdentifier>{f2d6ef87-540a-4604-9150-406eb09acae3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\network\packet">
+      <UniqueIdentifier>{44c50cf1-8abf-4ab6-9bae-30a07a14a04b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\server">
+      <UniqueIdentifier>{e18c7ffa-28c9-4c21-b2f2-d8ab2a207954}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\util">
+      <UniqueIdentifier>{c44df014-0764-465a-9b66-95c2535d7db0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\world">
+      <UniqueIdentifier>{b65921ee-aaea-4037-8304-345bd54b24c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\world\entity">
+      <UniqueIdentifier>{9917f8eb-3435-4414-a2e6-532fb90e1bcf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\world\entity\ai">
+      <UniqueIdentifier>{2f090fd4-a8ab-4035-aab8-6d46a9a14a99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\world\entity\animal">
+      <UniqueIdentifier>{530a2c4b-2353-403e-be2c-100664cf3a53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\world\entity\item">
+      <UniqueIdentifier>{76b5ba53-ec17-4db5-aeb2-a405e5778160}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\world\entity\monster">
+      <UniqueIdentifier>{b63a1367-9743-4011-8333-61ca964859a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\world\entity\npc">
+      <UniqueIdentifier>{4e204a5a-f635-4d63-9e16-1c821c5435e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\world\entity\player">
+      <UniqueIdentifier>{94e5d444-7afa-41bb-ac77-65fd8d73f286}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\world\entity\projectile">
+      <UniqueIdentifier>{3d9cb49c-0399-4dab-8165-b6262a3ab990}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\world\phys">
+      <UniqueIdentifier>{f284afb7-5f83-4598-8ad7-fede0ec9d10c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\world\level">
+      <UniqueIdentifier>{c4389802-b1f0-41f6-8f59-628a577a4866}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\world\level\storage">
+      <UniqueIdentifier>{1dc17594-4b8c-4353-b65d-e57a13725db4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\world\item">
+      <UniqueIdentifier>{cfff0a22-8ccc-4e3b-914e-f9ebb3279ae5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\world\level\block">
+      <UniqueIdentifier>{8cca5476-5b6b-4059-8f26-ea4f70dfea83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\world\level\block\entity">
+      <UniqueIdentifier>{66eaa06c-3d13-48f1-af05-5023a32a64e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\platform">
+      <UniqueIdentifier>{af2ebf46-53d0-4aa8-932c-fec3237c00e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\platform\input">
+      <UniqueIdentifier>{54598d3c-54f0-4bec-bc5b-2de0d524d640}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\platform\threading">
+      <UniqueIdentifier>{0a41778e-97b5-40e3-ab92-0fd058641aac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\world\inventory">
+      <UniqueIdentifier>{01bdd93d-4cac-4202-8bd2-f8169c96dc28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\client\renderer">
+      <UniqueIdentifier>{257238e3-ea19-4101-92da-f6d9d86fe88f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\client\renderer\renderer">
+      <UniqueIdentifier>{9599d549-dabf-4ea0-b4fe-895c140ebe2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\world\event">
+      <UniqueIdentifier>{a98932cd-5cf2-46ea-9e4c-126a65907473}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\client\gui\screens\touch">
+      <UniqueIdentifier>{cceed95b-496e-4ef2-a460-2149189adc34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\client\model">
+      <UniqueIdentifier>{6d281dd2-19a4-4cd6-aa04-d302ef56712e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\client\particle">
+      <UniqueIdentifier>{8870ea0a-e9fb-4400-9ae4-899c303f4297}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\client\renderer\chunk">
+      <UniqueIdentifier>{54764243-cde8-4c08-85a5-4a0be29788dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\client\renderer\entity">
+      <UniqueIdentifier>{b07480cf-f426-4953-a9e0-0ed43f52b016}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\client\renderer\game">
+      <UniqueIdentifier>{e0df46d9-fb11-43f8-9dfb-f258211ba4a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\client\renderer\texture">
+      <UniqueIdentifier>{b241b4c6-0176-4227-9e19-a07d193bd7e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\client\renderer\tile">
+      <UniqueIdentifier>{ff6b1a2e-0ed8-49e3-bd69-912a704dab1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\client\renderer\tileentity">
+      <UniqueIdentifier>{642e6120-41e5-4e88-ad47-4ae67c494ca5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\world\game">
+      <UniqueIdentifier>{8ff8db3d-3d5a-4dcf-8d59-f816c1e26d0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MCPE\minecraftpe\world\food">
+      <UniqueIdentifier>{9948c5a9-cd42-49c3-93f6-6152641501c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servermarnager\entity\animal">
+      <UniqueIdentifier>{54b93b8b-7ab0-446c-a1a2-420d4a48f637}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servermarnager\entity\item">
+      <UniqueIdentifier>{4818265f-df59-4679-94ee-b04871919e06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servermarnager\entity\monster">
+      <UniqueIdentifier>{143950b2-ee0d-4708-851d-bfe3a12d61f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servermarnager\entity\npc">
+      <UniqueIdentifier>{debbb6a4-fa63-48d0-b7c3-2d1f0c2d55b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servermarnager\entity\player">
+      <UniqueIdentifier>{bc168abe-59b0-4600-a1a0-f282a7c99d16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="servermarnager\entity\projectile">
+      <UniqueIdentifier>{db4c6b4c-f588-4325-b35d-1ef87bbd4b4a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -494,72 +716,6 @@
     </ClInclude>
     <ClInclude Include="servermanager\command\defaults\BanCommand.h">
       <Filter>servermarnager\command\defaults</Filter>
-    </ClInclude>
-    <ClInclude Include="servermanager\entity\SMSkeleton.h">
-      <Filter>servermarnager\entity</Filter>
-    </ClInclude>
-    <ClInclude Include="servermanager\entity\SMWaterMob.h">
-      <Filter>servermarnager\entity</Filter>
-    </ClInclude>
-    <ClInclude Include="servermanager\entity\SMZombie.h">
-      <Filter>servermarnager\entity</Filter>
-    </ClInclude>
-    <ClInclude Include="servermanager\entity\SMAgableMob.h">
-      <Filter>servermarnager\entity</Filter>
-    </ClInclude>
-    <ClInclude Include="servermanager\entity\SMAnimal.h">
-      <Filter>servermarnager\entity</Filter>
-    </ClInclude>
-    <ClInclude Include="servermanager\entity\SMArrow.h">
-      <Filter>servermarnager\entity</Filter>
-    </ClInclude>
-    <ClInclude Include="servermanager\entity\SMBlaze.h">
-      <Filter>servermarnager\entity</Filter>
-    </ClInclude>
-    <ClInclude Include="servermanager\entity\SMBoat.h">
-      <Filter>servermarnager\entity</Filter>
-    </ClInclude>
-    <ClInclude Include="servermanager\entity\SMChicken.h">
-      <Filter>servermarnager\entity</Filter>
-    </ClInclude>
-    <ClInclude Include="servermanager\entity\SMCow.h">
-      <Filter>servermarnager\entity</Filter>
-    </ClInclude>
-    <ClInclude Include="servermanager\entity\SMCreeper.h">
-      <Filter>servermarnager\entity</Filter>
-    </ClInclude>
-    <ClInclude Include="servermanager\entity\SMEnderman.h">
-      <Filter>servermarnager\entity</Filter>
-    </ClInclude>
-    <ClInclude Include="servermanager\entity\SMEntity.h">
-      <Filter>servermarnager\entity</Filter>
-    </ClInclude>
-    <ClInclude Include="servermanager\entity\SMItemEntity.h">
-      <Filter>servermarnager\entity</Filter>
-    </ClInclude>
-    <ClInclude Include="servermanager\entity\SMLocalPlayer.h">
-      <Filter>servermarnager\entity</Filter>
-    </ClInclude>
-    <ClInclude Include="servermanager\entity\SMMob.h">
-      <Filter>servermarnager\entity</Filter>
-    </ClInclude>
-    <ClInclude Include="servermanager\entity\SMMonster.h">
-      <Filter>servermarnager\entity</Filter>
-    </ClInclude>
-    <ClInclude Include="servermanager\entity\SMMushroomCow.h">
-      <Filter>servermarnager\entity</Filter>
-    </ClInclude>
-    <ClInclude Include="servermanager\entity\SMPathfinderMob.h">
-      <Filter>servermarnager\entity</Filter>
-    </ClInclude>
-    <ClInclude Include="servermanager\entity\SMPig.h">
-      <Filter>servermarnager\entity</Filter>
-    </ClInclude>
-    <ClInclude Include="servermanager\entity\SMPlayer.h">
-      <Filter>servermarnager\entity</Filter>
-    </ClInclude>
-    <ClInclude Include="servermanager\entity\SMSheep.h">
-      <Filter>servermarnager\entity</Filter>
     </ClInclude>
     <ClInclude Include="servermanager\entity\custom\CustomArrow.h">
       <Filter>servermarnager\entity\custom</Filter>
@@ -732,7 +888,723 @@
     <ClInclude Include="servermanager\client\custom\CustomMinecraftClient.h">
       <Filter>servermarnager\client\custom</Filter>
     </ClInclude>
-    <ClInclude Include="log.h" />
+    <ClInclude Include="servermanager\event\player\PlayerKickEvent.h">
+      <Filter>servermarnager\event\player</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\permissions\Permission.h">
+      <Filter>servermarnager\permissions</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\permissions\Permissible.h">
+      <Filter>servermarnager\permissions</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\permissions\PermissionDefault.h">
+      <Filter>servermarnager\permissions</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\permissions\PermissionAttachment.h">
+      <Filter>servermarnager\permissions</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\permissions\PermissionAttachmentInfo.h">
+      <Filter>servermarnager\permissions</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\permissions\ServerOperator.h">
+      <Filter>servermarnager\permissions</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\permissions\PermissionRemovedExecutor.h">
+      <Filter>servermarnager\permissions</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\command\CommandSender.h">
+      <Filter>servermarnager\command</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\util\permissions\DefaultPermissions.h">
+      <Filter>servermarnager\util\permissions</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\util\permissions\BroadcastPermissions.h">
+      <Filter>servermarnager\util\permissions</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\util\permissions\CommandPermissions.h">
+      <Filter>servermarnager\util\permissions</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\command\PluginCommandJsonParser.h">
+      <Filter>servermarnager\command</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\permissions\PermissibleBase.h">
+      <Filter>servermarnager\permissions</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\ChatColor.h">
+      <Filter>servermarnager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\Substrate.h">
+      <Filter>MCPE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\log.h">
+      <Filter>MCPE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\json\assertions.h">
+      <Filter>MCPE\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\json\autolink.h">
+      <Filter>MCPE\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\json\config.h">
+      <Filter>MCPE\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\json\features.h">
+      <Filter>MCPE\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\json\forwards.h">
+      <Filter>MCPE\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\json\json.h">
+      <Filter>MCPE\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\json\reader.h">
+      <Filter>MCPE\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\json\value.h">
+      <Filter>MCPE\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\json\version.h">
+      <Filter>MCPE\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\json\writer.h">
+      <Filter>MCPE\json</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\raknet\BitStream.h">
+      <Filter>MCPE\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\raknet\DS_List.h">
+      <Filter>MCPE\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\raknet\Export.h">
+      <Filter>MCPE\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\raknet\Itoa.h">
+      <Filter>MCPE\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\raknet\NativeTypes.h">
+      <Filter>MCPE\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\raknet\PacketPriority.h">
+      <Filter>MCPE\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\raknet\RakAlloca.h">
+      <Filter>MCPE\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\raknet\RakAssert.h">
+      <Filter>MCPE\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\raknet\RakMemoryOverride.h">
+      <Filter>MCPE\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\raknet\RakNetDefines.h">
+      <Filter>MCPE\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\raknet\RakNetDefinesOverrides.h">
+      <Filter>MCPE\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\raknet\RakNetTime.h">
+      <Filter>MCPE\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\raknet\RakNetTypes.h">
+      <Filter>MCPE\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\raknet\RakPeer.h">
+      <Filter>MCPE\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\raknet\RakString.h">
+      <Filter>MCPE\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\raknet\RakWString.h">
+      <Filter>MCPE\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\raknet\SocketIncludes.h">
+      <Filter>MCPE\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\raknet\WindowsIncludes.h">
+      <Filter>MCPE\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\raknet\XBox360Includes.h">
+      <Filter>MCPE\raknet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\game\GameCallbacks.h">
+      <Filter>MCPE\minecraftpe\client\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\game\MinecraftClient.h">
+      <Filter>MCPE\minecraftpe\client\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\game\ServerSkinInfoData.h">
+      <Filter>MCPE\minecraftpe\client\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\game\SkinInfoData.h">
+      <Filter>MCPE\minecraftpe\client\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\game\SkinInfoFactory.h">
+      <Filter>MCPE\minecraftpe\client\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\game\Vibration.h">
+      <Filter>MCPE\minecraftpe\client\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\game\ClientSkinInfoData.h">
+      <Filter>MCPE\minecraftpe\client\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\gamemode\CreativeMode.h">
+      <Filter>MCPE\minecraftpe\client\gamemode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\gamemode\GameMode.h">
+      <Filter>MCPE\minecraftpe\client\gamemode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\gamemode\SurvivalMode.h">
+      <Filter>MCPE\minecraftpe\client\gamemode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\gui\components\GuiElement.h">
+      <Filter>MCPE\minecraftpe\client\gui\components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\gui\components\GuiElementContainer.h">
+      <Filter>MCPE\minecraftpe\client\gui\components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\gui\components\OptionsGroup.h">
+      <Filter>MCPE\minecraftpe\client\gui\components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\gui\components\OptionsPane.h">
+      <Filter>MCPE\minecraftpe\client\gui\components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\gui\gui\ScreenRenderer.h">
+      <Filter>MCPE\minecraftpe\client\gui\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\gui\gui\Gui.h">
+      <Filter>MCPE\minecraftpe\client\gui\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\gui\gui\GuiComponent.h">
+      <Filter>MCPE\minecraftpe\client\gui\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\gui\screens\OptionsScreen.h">
+      <Filter>MCPE\minecraftpe\client\gui\screens</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\gui\screens\StartMenuScreen.h">
+      <Filter>MCPE\minecraftpe\client\gui\screens</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\gui\screens\UIScreenType.h">
+      <Filter>MCPE\minecraftpe\client\gui\screens</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\gui\screens\ChatScreen.h">
+      <Filter>MCPE\minecraftpe\client\gui\screens</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\multiplayer\MultiPlayerLevel.h">
+      <Filter>MCPE\minecraftpe\client\multiplayer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\options\Options.h">
+      <Filter>MCPE\minecraftpe\client\options</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\options\Whitelist.h">
+      <Filter>MCPE\minecraftpe\client\options</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\options\WhitelistFile.h">
+      <Filter>MCPE\minecraftpe\client\options</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\player\LocalPlayer.h">
+      <Filter>MCPE\minecraftpe\client\player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\player\RemotePlayer.h">
+      <Filter>MCPE\minecraftpe\client\player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\client\renderer\texture\TextureUVCoordinateSet.h">
+      <Filter>MCPE\minecraftpe\client\renderer\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\locale\I18n.h">
+      <Filter>MCPE\minecraftpe\locale</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\nbt\DoubleTag.h">
+      <Filter>MCPE\minecraftpe\nbt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\nbt\EndTag.h">
+      <Filter>MCPE\minecraftpe\nbt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\nbt\FloatTag.h">
+      <Filter>MCPE\minecraftpe\nbt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\nbt\Int64Tag.h">
+      <Filter>MCPE\minecraftpe\nbt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\nbt\IntArrayTag.h">
+      <Filter>MCPE\minecraftpe\nbt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\nbt\IntTag.h">
+      <Filter>MCPE\minecraftpe\nbt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\nbt\ListTag.h">
+      <Filter>MCPE\minecraftpe\nbt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\nbt\NamedTag.h">
+      <Filter>MCPE\minecraftpe\nbt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\nbt\ShortTag.h">
+      <Filter>MCPE\minecraftpe\nbt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\nbt\StringTag.h">
+      <Filter>MCPE\minecraftpe\nbt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\nbt\Tag.h">
+      <Filter>MCPE\minecraftpe\nbt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\nbt\ByteArrayTag.h">
+      <Filter>MCPE\minecraftpe\nbt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\nbt\ByteTag.h">
+      <Filter>MCPE\minecraftpe\nbt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\nbt\CompoundTag.h">
+      <Filter>MCPE\minecraftpe\nbt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\BatchedPacketSender.h">
+      <Filter>MCPE\minecraftpe\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\ClientNetworkHandler.h">
+      <Filter>MCPE\minecraftpe\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\LegacyClientNetworkHandler.h">
+      <Filter>MCPE\minecraftpe\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\MinecraftPackets.h">
+      <Filter>MCPE\minecraftpe\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\NetEventCallback.h">
+      <Filter>MCPE\minecraftpe\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\Packet.h">
+      <Filter>MCPE\minecraftpe\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\PacketSender.h">
+      <Filter>MCPE\minecraftpe\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\RakNetInstance.h">
+      <Filter>MCPE\minecraftpe\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\ServerNetworkHandler.h">
+      <Filter>MCPE\minecraftpe\network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\packet\AddEntityPacket.h">
+      <Filter>MCPE\minecraftpe\network\packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\packet\AddPlayerPacket.h">
+      <Filter>MCPE\minecraftpe\network\packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\packet\AnimatePacket.h">
+      <Filter>MCPE\minecraftpe\network\packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\packet\BatchPacket.h">
+      <Filter>MCPE\minecraftpe\network\packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\packet\BlockEntityDataPacket.h">
+      <Filter>MCPE\minecraftpe\network\packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\packet\ContainerSetContentPacket.h">
+      <Filter>MCPE\minecraftpe\network\packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\packet\ContainerSetSlotPacket.h">
+      <Filter>MCPE\minecraftpe\network\packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\packet\DisconnectPacket.h">
+      <Filter>MCPE\minecraftpe\network\packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\packet\DropItemPacket.h">
+      <Filter>MCPE\minecraftpe\network\packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\packet\LoginPacket.h">
+      <Filter>MCPE\minecraftpe\network\packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\packet\MovePlayerPacket.h">
+      <Filter>MCPE\minecraftpe\network\packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\packet\PlayerActionPacket.h">
+      <Filter>MCPE\minecraftpe\network\packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\packet\PlayStatusPacket.h">
+      <Filter>MCPE\minecraftpe\network\packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\packet\RemoveBlockPacket.h">
+      <Filter>MCPE\minecraftpe\network\packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\packet\TextPacket.h">
+      <Filter>MCPE\minecraftpe\network\packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\network\packet\UseItemPacket.h">
+      <Filter>MCPE\minecraftpe\network\packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\platform\input\Controller.h">
+      <Filter>MCPE\minecraftpe\platform\input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\platform\threading\BackgroundWorker.h">
+      <Filter>MCPE\minecraftpe\platform\threading</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\platform\threading\WorkerPool.h">
+      <Filter>MCPE\minecraftpe\platform\threading</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\server\ServerCommandParser.h">
+      <Filter>MCPE\minecraftpe\server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\server\ServerLevel.h">
+      <Filter>MCPE\minecraftpe\server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\server\ServerPlayer.h">
+      <Filter>MCPE\minecraftpe\server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\util\Token.h">
+      <Filter>MCPE\minecraftpe\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\util\Util.h">
+      <Filter>MCPE\minecraftpe\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\util\UUID.h">
+      <Filter>MCPE\minecraftpe\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\util\DataIO.h">
+      <Filter>MCPE\minecraftpe\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\util\File.h">
+      <Filter>MCPE\minecraftpe\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\util\NewType.h">
+      <Filter>MCPE\minecraftpe\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\util\Random.h">
+      <Filter>MCPE\minecraftpe\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\Container.h">
+      <Filter>MCPE\minecraftpe\world</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\Minecraft.h">
+      <Filter>MCPE\minecraftpe\world</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\phys\Vec2.h">
+      <Filter>MCPE\minecraftpe\world\phys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\phys\Vec3.h">
+      <Filter>MCPE\minecraftpe\world\phys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\phys\AABB.h">
+      <Filter>MCPE\minecraftpe\world\phys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\phys\HitResult.h">
+      <Filter>MCPE\minecraftpe\world\phys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\item\ArmorItem.h">
+      <Filter>MCPE\minecraftpe\world\item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\item\CreativeItemCategory.h">
+      <Filter>MCPE\minecraftpe\world\item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\item\Item.h">
+      <Filter>MCPE\minecraftpe\world\item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\item\ItemInstance.h">
+      <Filter>MCPE\minecraftpe\world\item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\inventory\BaseContainerMenu.h">
+      <Filter>MCPE\minecraftpe\world\inventory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\inventory\ContainerType.h">
+      <Filter>MCPE\minecraftpe\world\inventory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\inventory\FillingContainer.h">
+      <Filter>MCPE\minecraftpe\world\inventory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\inventory\InventoryMenu.h">
+      <Filter>MCPE\minecraftpe\world\inventory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\game\User.h">
+      <Filter>MCPE\minecraftpe\world\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\food\SimpleFoodData.h">
+      <Filter>MCPE\minecraftpe\world\food</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\event\EntityEvent.h">
+      <Filter>MCPE\minecraftpe\world\event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\event\LevelEvent.h">
+      <Filter>MCPE\minecraftpe\world\event</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\AgableMob.h">
+      <Filter>MCPE\minecraftpe\world\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\ArmorSlot.h">
+      <Filter>MCPE\minecraftpe\world\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\Attribute.h">
+      <Filter>MCPE\minecraftpe\world\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\AttributeInstance.h">
+      <Filter>MCPE\minecraftpe\world\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\Entity.h">
+      <Filter>MCPE\minecraftpe\world\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\EntityClassTree.h">
+      <Filter>MCPE\minecraftpe\world\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\EntityDamageByBlockSource.h">
+      <Filter>MCPE\minecraftpe\world\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\EntityDamageByChildEntitySource.h">
+      <Filter>MCPE\minecraftpe\world\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\EntityDamageByEntitySource.h">
+      <Filter>MCPE\minecraftpe\world\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\EntityDamageCause.h">
+      <Filter>MCPE\minecraftpe\world\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\EntityDamageSource.h">
+      <Filter>MCPE\minecraftpe\world\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\EntityLink.h">
+      <Filter>MCPE\minecraftpe\world\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\EntityPos.h">
+      <Filter>MCPE\minecraftpe\world\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\EntityRendererId.h">
+      <Filter>MCPE\minecraftpe\world\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\EntityType.h">
+      <Filter>MCPE\minecraftpe\world\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\EntityUniqueID.h">
+      <Filter>MCPE\minecraftpe\world\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\Mob.h">
+      <Filter>MCPE\minecraftpe\world\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\ParticleType.h">
+      <Filter>MCPE\minecraftpe\world\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\PathfinderMob.h">
+      <Filter>MCPE\minecraftpe\world\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\RemovedEntityDamageByType.h">
+      <Filter>MCPE\minecraftpe\world\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\SynchedEntityData.h">
+      <Filter>MCPE\minecraftpe\world\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\WaterAnimal.h">
+      <Filter>MCPE\minecraftpe\world\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\projectile\Arrow.h">
+      <Filter>MCPE\minecraftpe\world\entity\projectile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\player\Player.h">
+      <Filter>MCPE\minecraftpe\world\entity\player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\player\Abilities.h">
+      <Filter>MCPE\minecraftpe\world\entity\player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\player\Inventory.h">
+      <Filter>MCPE\minecraftpe\world\entity\player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\monster\Monster.h">
+      <Filter>MCPE\minecraftpe\world\entity\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\monster\Skeleton.h">
+      <Filter>MCPE\minecraftpe\world\entity\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\monster\Zombie.h">
+      <Filter>MCPE\minecraftpe\world\entity\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\monster\Blaze.h">
+      <Filter>MCPE\minecraftpe\world\entity\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\monster\Creeper.h">
+      <Filter>MCPE\minecraftpe\world\entity\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\monster\Enderman.h">
+      <Filter>MCPE\minecraftpe\world\entity\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\item\ItemEntity.h">
+      <Filter>MCPE\minecraftpe\world\entity\item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\item\Boat.h">
+      <Filter>MCPE\minecraftpe\world\entity\item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\animal\MushroomCow.h">
+      <Filter>MCPE\minecraftpe\world\entity\animal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\animal\Pig.h">
+      <Filter>MCPE\minecraftpe\world\entity\animal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\animal\Sheep.h">
+      <Filter>MCPE\minecraftpe\world\entity\animal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\animal\Animal.h">
+      <Filter>MCPE\minecraftpe\world\entity\animal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\animal\Chicken.h">
+      <Filter>MCPE\minecraftpe\world\entity\animal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\entity\animal\Cow.h">
+      <Filter>MCPE\minecraftpe\world\entity\animal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\item\UseAnimation.h">
+      <Filter>MCPE\minecraftpe\world\item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\BlockPos.h">
+      <Filter>MCPE\minecraftpe\world\level</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\BlockSource.h">
+      <Filter>MCPE\minecraftpe\world\level</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\BlockSourceListener.h">
+      <Filter>MCPE\minecraftpe\world\level</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\Brightness.h">
+      <Filter>MCPE\minecraftpe\world\level</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\ChunkSource.h">
+      <Filter>MCPE\minecraftpe\world\level</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\Difficulty.h">
+      <Filter>MCPE\minecraftpe\world\level</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\Dimension.h">
+      <Filter>MCPE\minecraftpe\world\level</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\DimensionId.h">
+      <Filter>MCPE\minecraftpe\world\level</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\GameType.h">
+      <Filter>MCPE\minecraftpe\world\level</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\GeneratorType.h">
+      <Filter>MCPE\minecraftpe\world\level</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\Level.h">
+      <Filter>MCPE\minecraftpe\world\level</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\LevelListener.h">
+      <Filter>MCPE\minecraftpe\world\level</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\LevelSettings.h">
+      <Filter>MCPE\minecraftpe\world\level</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\PlayerChunkSource.h">
+      <Filter>MCPE\minecraftpe\world\level</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\block\Block.h">
+      <Filter>MCPE\minecraftpe\world\level\block</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\block\BlockProperty.h">
+      <Filter>MCPE\minecraftpe\world\level\block</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\block\MaterialType.h">
+      <Filter>MCPE\minecraftpe\world\level\block</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\block\entity\BlockEntity.h">
+      <Filter>MCPE\minecraftpe\world\level\block\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\block\entity\BlockEntityType.h">
+      <Filter>MCPE\minecraftpe\world\level\block\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\storage\LevelStorage.h">
+      <Filter>MCPE\minecraftpe\world\level\storage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\storage\StorageVersion.h">
+      <Filter>MCPE\minecraftpe\world\level\storage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\storage\LevelData.h">
+      <Filter>MCPE\minecraftpe\world\level\storage</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\App.h">
+      <Filter>MCPE\minecraftpe</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\AppPlatform.h">
+      <Filter>MCPE\minecraftpe</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\AppPlatform_android.h">
+      <Filter>MCPE\minecraftpe</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\AppPlatformListener.h">
+      <Filter>MCPE\minecraftpe</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\CommonTypes.h">
+      <Filter>MCPE\minecraftpe</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\SavedData.h">
+      <Filter>MCPE\minecraftpe</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\SharedAttributes.h">
+      <Filter>MCPE\minecraftpe</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\SharedConstants.h">
+      <Filter>MCPE\minecraftpe</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\ChunkPos.h">
+      <Filter>MCPE\minecraftpe\world\level</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\MCPE\include\minecraftpe\world\level\storage\DBStorage.h">
+      <Filter>MCPE\minecraftpe\world\level\storage</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\animal\SMAnimal.h">
+      <Filter>servermarnager\entity\animal</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\animal\SMChicken.h">
+      <Filter>servermarnager\entity\animal</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\animal\SMCow.h">
+      <Filter>servermarnager\entity\animal</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\animal\SMMushroomCow.h">
+      <Filter>servermarnager\entity\animal</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\animal\SMPig.h">
+      <Filter>servermarnager\entity\animal</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\animal\SMSheep.h">
+      <Filter>servermarnager\entity\animal</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\item\SMBoat.h">
+      <Filter>servermarnager\entity\item</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\item\SMItemEntity.h">
+      <Filter>servermarnager\entity\item</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\monster\SMEnderman.h">
+      <Filter>servermarnager\entity\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\monster\SMMonster.h">
+      <Filter>servermarnager\entity\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\monster\SMSkeleton.h">
+      <Filter>servermarnager\entity\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\monster\SMZombie.h">
+      <Filter>servermarnager\entity\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\monster\SMBlaze.h">
+      <Filter>servermarnager\entity\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\monster\SMCreeper.h">
+      <Filter>servermarnager\entity\monster</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\player\SMPlayer.h">
+      <Filter>servermarnager\entity\player</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\projectile\SMArrow.h">
+      <Filter>servermarnager\entity\projectile</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\SMAgableMob.h">
+      <Filter>servermarnager\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\SMEntity.h">
+      <Filter>servermarnager\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\SMMob.h">
+      <Filter>servermarnager\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\SMPathfinderMob.h">
+      <Filter>servermarnager\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="servermanager\entity\SMWaterMob.h">
+      <Filter>servermarnager\entity</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\..\..\curl\lib\libcrypto.a">

@@ -15,30 +15,30 @@ bool VanillaCommand::isVanillaCommand() const
 	return true;
 }
 
-int VanillaCommand::getInteger(SMPlayer *sender, const std::string &value, int min, int max) const
+int VanillaCommand::getInteger(CommandSender *sender, const std::string &value, int min, int max) const
 {
 	int i = SMUtil::toInt(value);
-	if(i < min)
+	if (i < min)
 		i = min;
-	else if(i > max)
+	else if (i > max)
 		i = max;
 
 	return i;
 }
 
-double VanillaCommand::getRelativeDouble(double original, SMPlayer *sender, std::string &input) const
+double VanillaCommand::getRelativeDouble(double original, CommandSender *sender, std::string &input) const
 {
-	if(input[0] == '~')
+	if (input[0] == '~')
 		return original + SMUtil::toDouble(input.erase(0, 1));
 	return getDouble(sender, input);
 }
 
-double VanillaCommand::getDouble(SMPlayer *sender, const std::string &value, double min, double max) const
+double VanillaCommand::getDouble(CommandSender *sender, const std::string &value, double min, double max) const
 {
 	double result = SMUtil::toDouble(value.c_str());
-	if(result < min)
+	if (result < min)
 		result = min;
-	else if(result > max)
+	else if (result > max)
 		result = max;
 
 	return result;

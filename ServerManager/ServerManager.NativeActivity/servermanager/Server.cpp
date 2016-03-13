@@ -8,24 +8,24 @@
 #include "SMList.h"
 #include "BanList.h"
 #include "BanEntry.h"
+#include "ChatColor.h"
 #include "client/settings/SMOptions.h"
 #include "command/CommandMap.h"
 #include "command/Command.h"
 #include "level/SMLevel.h"
-#include "entity/SMPlayer.h"
-#include "entity/SMLocalPlayer.h"
 #include "plugin/PluginManager.h"
 #include "plugin/Plugin.h"
 #include "plugin/PluginDescriptionFile.h"
 #include "util/SMUtil.h"
+#include "util/permissions/DefaultPermissions.h"
 #include "version.h"
-#include "minecraftpe/client/Minecraft.h"
-#include "minecraftpe/entity/player/LocalPlayer.h"
-#include "minecraftpe/entity/EntityClassTree.h"
-#include "minecraftpe/network/PacketSender.h"
-#include "minecraftpe/network/protocol/TextPacket.h"
-#include "minecraftpe/network/ServerNetworkHandler.h"
+#include "minecraftpe/world/Minecraft.h"
+#include "minecraftpe/client/player/LocalPlayer.h"
+#include "minecraftpe/world/entity/EntityClassTree.h"
 #include "minecraftpe/util/File.h"
+
+const std::string Server::BROADCAST_CHANNEL_ADMINISTRATIVE = "servermanager.broadcast.admin";
+const std::string Server::BROADCAST_CHANNEL_USERS = "servermanager.broadcast.user";
 
 Server::Server()
 {
@@ -34,31 +34,18 @@ Server::Server()
 	started = false;
 	level = NULL;
 	server = NULL;
-
-	options = new SMOptions("servermanager.txt");
-	banByName = new BanList("banned-players.txt");
-	banByIP = new BanList("banned-ips.txt");
-	operators = new SMList("ops.txt");
-	whitelist = new SMList("white-list.txt");
-
-	commandMap = new CommandMap;
-	pluginManager = new PluginManager(this, commandMap);
-
 	localPlayer = NULL;
-
-	newVersionCode = 0;
 }
 
 Server::~Server()
 {
-	pluginManager->clearPlugins();
-
 	delete options;
 	delete banByName;
 	delete banByIP;
 	delete operators;
 	delete whitelist;
 	delete commandMap;
+	delete pluginManager;
 }
 
 void Server::init(Minecraft *server, const std::string &path)
@@ -67,76 +54,73 @@ void Server::init(Minecraft *server, const std::string &path)
 
 	serverDir = path + "servermanager/";
 	pluginDir = serverDir + "plugins/";
+	File::createFolder(serverDir);
 
-	load(serverDir);
+	options = new SMOptions("servermanager.txt");
+	options->load(serverDir);
+
+	banByName = new BanList("banned-players.txt");
+	banByName->load(serverDir);
+
+	banByIP = new BanList("banned-ips.txt");
+	banByIP->load(serverDir);
+
+	operators = new SMList("ops.txt");
+	operators->load(serverDir);
+
+	whitelist = new SMList("white-list.txt");
+	whitelist->load(serverDir);
+
+	commandMap = new CommandMap;
+	pluginManager = new PluginManager(this, commandMap);
 
 	loadPlugins();
 	enablePlugins(PluginLoadOrder::STARTUP);
-
-	updateCheck();
-}
-
-void Server::load(const std::string &path)
-{
-	File::createFolder(path);
-
-	options->load(path);
-	banByName->load(path);
-	banByIP->load(path);
-	operators->load(path);
-	whitelist->load(path);
 }
 
 void Server::start(LocalPlayer *localPlayer, Level *level)
 {
 	if (started)
 		return;
-
-	this->level = new SMLevel(this, level);
-	this->localPlayer = new SMLocalPlayer(this, localPlayer);
-
-	players.push_back(this->localPlayer);
-	entityList[localPlayer->getUniqueID()] = this->localPlayer;
-
 	started = true;
 
 	enablePlugins(PluginLoadOrder::POSTWORLD);
 
-	if (newVersionCode != 0 && newVersionCode != VERSION_CODE)
-	{
-		if (newVersionCode > VERSION_CODE)
-		{
-			this->localPlayer->sendMessage("[SM] 새로운 버전이 있습니다 : v" + newVersion + " Changelog:");
-			for (int i = 0; i < newChangelog.size(); i++)
-				this->localPlayer->sendMessage(" " + SMUtil::toString(i + 1) + ". " + newChangelog[i]);
-		}
-		else
-			this->localPlayer->sendMessage("[SM] 현재 개발 버전을 사용중입니다.");
-	}
+	this->level = new SMLevel(this, level);
+	this->localPlayer = new SMPlayer(this, localPlayer);
+	players.push_back(this->localPlayer);
+
+	updateCheck();
 }
 
 void Server::stop()
 {
 	if (!started)
 		return;
-
 	started = false;
-
-	disablePlugins();
-
-	for (int i = 0; i < players.size(); ++i)
-		delete players[i];
-
-	players.clear();
-
-	delete level;
-	level = NULL;
 
 	options->save();
 	banByName->save();
 	banByIP->save();
 	operators->save();
 	whitelist->save();
+
+	disablePlugins();
+
+	localPlayer->disconnect();
+
+	for (size_t i = 0; i < players.size(); ++i)
+		players[i]->close(ChatColor::YELLOW + "%multiplayer.player.left", "Server Closed");
+
+	for (size_t i = 0; i < players.size(); ++i)
+		delete players[i];
+
+	players.clear();
+
+	pluginManager->clearPlugins();
+
+	delete level;
+	level = NULL;
 }
 
 SMOptions *Server::getOptions() const
@@ -149,9 +133,8 @@ void Server::saveOptions()
 	options->save();
 }
 
-void Server::registerPlugin(Plugin *plugin)
+void Server::setVanillaCommands()
 {
-	pluginManager->registerPlugin(plugin);
 }
 
 void Server::loadPlugins()
@@ -163,6 +146,15 @@ void Server::loadPlugins()
 	}
 	else
 		File::createFolder(pluginDir);
+}
+
+void Server::loadPlugin(Plugin *plugin)
+{
+	pluginManager->enablePlugin(plugin);
+
+	std::vector<Permission *> perms = plugin->getDescription()->getPermissions();
+	for (Permission *perm : perms)
+		pluginManager->addPermission(perm);
 }
 
 void Server::enablePlugins(PluginLoadOrder type)
@@ -179,6 +171,7 @@ void Server::enablePlugins(PluginLoadOrder type)
 	{
 		commandMap->setFallbackCommands();
 		setVanillaCommands();
+		DefaultPermissions::registerCorePermissions();
 	}
 }
 
@@ -198,7 +191,7 @@ SMPlayer *Server::getPlayer(const std::string &name) const
 	std::string lowerName = SMUtil::toLower(name);
 	int delta = std::numeric_limits<int>::max();
 
-	for (int i = 0; i < players.size(); ++i)
+	for (size_t i = 0; i < players.size(); ++i)
 	{
 		SMPlayer *player = players[i];
 		std::string n = SMUtil::toLower(player->getName());
@@ -223,7 +216,7 @@ std::vector<SMPlayer *> Server::matchPlayer(const std::string &partialName) cons
 	std::string lname = SMUtil::toLower(partialName);
 	std::vector<SMPlayer *> matchedPlayers;
 
-	for (int i = 0; i < players.size(); ++i)
+	for (size_t i = 0; i < players.size(); ++i)
 	{
 		SMPlayer *iterPlayer = players[i];
 		std::string iterPlayerName = iterPlayer->getName();
@@ -244,7 +237,7 @@ SMPlayer *Server::getPlayerExact(const std::string &name) const
 {
 	std::string lname = SMUtil::toLower(name);
 
-	for (int i = 0; i < players.size(); ++i)
+	for (size_t i = 0; i < players.size(); ++i)
 	{
 		SMPlayer *player = players[i];
 		if (!SMUtil::toLower(player->getName()).compare(lname))
@@ -253,7 +246,7 @@ SMPlayer *Server::getPlayerExact(const std::string &name) const
 	return NULL;
 }
 
-SMLocalPlayer *Server::getLocalPlayer() const
+SMPlayer *Server::getLocalPlayer() const
 {
 	return localPlayer;
 }
@@ -273,7 +266,7 @@ void Server::removePlayer(SMPlayer *player)
 
 SMPlayer *Server::getPlayer(Player *player) const
 {
-	for (int i = 0; i < players.size(); ++i)
+	for (size_t i = 0; i < players.size(); ++i)
 	{
 		SMPlayer *smPlayer = players[i];
 		if (smPlayer->getHandle() == player)
@@ -301,63 +294,55 @@ SMEntity *Server::getEntity(Entity *entity)
 	return entityList[uniqueID];
 }
 
-void Server::kickPlayer(SMPlayer *player, const std::string &reason)
+int Server::broadcastMessage(const std::string &message)
 {
-	if (!player || player->isLocalPlayer())
-		return;
-
-	ServerNetworkHandler *handler = (ServerNetworkHandler *)getServer()->getNetEventCallback();
-	handler->disconnectClient(player->getHandle()->guid, reason);
+	return broadcast(message, BROADCAST_CHANNEL_USERS);
 }
 
-void Server::broadcastMessage(const std::string &message)
+int Server::broadcast(const std::string &message, const std::string &permission)
 {
-	for (std::string m : SMUtil::split(message, '\n'))
+	int count = 0;
+	
+	std::vector<Permissible *> permissibles = getPluginManager()->getPermissionSubscriptions(permission);
+	for (size_t i = 0; i < permissibles.size(); ++i)
 	{
-		if (m.empty())
-			continue;
-
-		TextPacket pk;
-		pk.type = TextPacket::TYPE_RAW;
-		pk.message = m;
-		getServer()->getPacketSender()->send(pk);
+		Permissible *permissible = permissibles[i];
+		if (permissible->isCommandSender() && permissible->hasPermission(permission))
+		{
+			CommandSender *user = (CommandSender *)permissible;
+			user->sendMessage(message);
+			count++;
+		}
 	}
+	return count;
 }
 
-void Server::broadcastTranslation(const std::string &message, const std::vector<std::string> &params)
+int Server::broadcastTranslation(const std::string &message, const std::vector<std::string> &params)
 {
-	TextPacket pk;
-	pk.type = TextPacket::TYPE_TRANSLATION;
-	pk.message = message;
-	pk.params = params;
-	getServer()->getPacketSender()->send(pk);
+	return broadcast(message, params, BROADCAST_CHANNEL_USERS);
 }
 
-void Server::broadcastTip(const std::string &message)
+int Server::broadcast(const std::string &message, const std::vector<std::string> &params, const std::string &permission)
 {
-	TextPacket pk;
-	pk.type = TextPacket::TYPE_TIP;
-	pk.message = message;
-	getServer()->getPacketSender()->send(pk);
-}
+	int count = 0;
 
-void Server::broadcastPopup(const std::string &message, const std::string &subtitle)
-{
-	TextPacket pk;
-	pk.type = TextPacket::TYPE_POPUP;
-	pk.source = message;
-	pk.message = subtitle;
-	getServer()->getPacketSender()->send(pk);
+	std::vector<Permissible *> permissibles = getPluginManager()->getPermissionSubscriptions(permission);
+	for (size_t i = 0; i < permissibles.size(); ++i)
+	{
+		Permissible *permissible = permissibles[i];
+		if (permissible->isCommandSender() && permissible->hasPermission(permission))
+		{
+			CommandSender *user = (CommandSender *)permissible;
+			user->sendTranslation(message, params);
+			count++;
+		}
+	}
+	return count;
 }
 
 int Server::getMaxPlayers() const
 {
-	int count = options->getServerPlayers();
-	if (count > 0)
-		count--;
-	if (count == 0)
-		count = 1;
-	return count;
+	return options->getServerPlayers();
 }
 
 int Server::getPort() const
@@ -380,14 +365,14 @@ bool Server::hasWhitelist() const
 	return options->hasWhitelist();
 }
 
-bool Server::getPvP() const
-{
-	return options->getPvP();
-}
-
 void Server::setWhitelist(bool value)
 {
 	options->setWhitelist(value);
+}
+
+bool Server::getPvP() const
+{
+	return options->getPvP();
 }
 
 void Server::setPvP(bool value)
@@ -395,18 +380,28 @@ void Server::setPvP(bool value)
 	options->setPvP(value);
 }
 
-bool Server::dispatchCommand(SMPlayer *player, const std::string &commandLine)
+void Server::reload()
 {
-	if (!player->isLocalPlayer() && !isOp(player->getName()))
-	{
-		player->sendTranslation("§c%commands.generic.permission", {});
-		return false;
-	}
+	options->load(serverDir);
+	banByName->load(serverDir);
+	banByIP->load(serverDir);
+	operators->load(serverDir);
+	whitelist->load(serverDir);
 
-	if (commandMap->dispatch(player, commandLine))
+	pluginManager->clearPlugins();
+	commandMap->clearCommands();
+
+	loadPlugins();
+	enablePlugins(PluginLoadOrder::STARTUP);
+	enablePlugins(PluginLoadOrder::POSTWORLD);
+}
+
+bool Server::dispatchCommand(CommandSender *sender, const std::string &commandLine)
+{
+	if (commandMap->dispatch(sender, commandLine))
 		return true;
 
-	player->sendTranslation("§c%commands.generic.notFound", {});
+	sender->sendTranslation(ChatColor::RED + "%commands.generic.notFound", {});
 	return false;
 }
 
@@ -512,13 +507,13 @@ std::string Server::getGamemodeString(GameType type)
 {
 	switch (type)
 	{
-	case GAMETYPE_SURVIVAL:
+	case GameType::SURVIVAL:
 		return "%gameMode.survival";
-	case GAMETYPE_CREATIVE:
+	case GameType::CREATIVE:
 		return "%gameMode.creative";
-	case GAMETYPE_ADVENTURE:
+	case GameType::ADVENTURE:
 		return "%gameMode.adventure";
-	case GAMETYPE_SPECTATOR:
+	case GameType::SPECTATOR:
 		return "%gameMode.spectator";
 	}
 	return "UNKNOWN";
@@ -529,13 +524,13 @@ GameType Server::getGamemodeFromString(const std::string &value)
 	std::string newStr = SMUtil::toLower(SMUtil::trim(value.c_str()));
 
 	if (!newStr.compare("0") || !newStr.compare("survival") || !newStr.compare("s"))
-		return GameType::GAMETYPE_SURVIVAL;
+		return GameType::SURVIVAL;
 	else if (!newStr.compare("1") || !newStr.compare("creative") || !newStr.compare("c"))
-		return GameType::GAMETYPE_CREATIVE;
+		return GameType::CREATIVE;
 	else if (!newStr.compare("2") || !newStr.compare("adventure") || !newStr.compare("a"))
-		return GameType::GAMETYPE_ADVENTURE;
+		return GameType::ADVENTURE;
 	else if (!newStr.compare("3") || !newStr.compare("spectator") || !newStr.compare("view") || !newStr.compare("v"))
-		return GameType::GAMETYPE_SPECTATOR;
+		return GameType::SPECTATOR;
 
 	return (GameType)-1;
 }
@@ -581,19 +576,20 @@ bool Server::updateCheck()
 		if (!reader.parse(data, root))
 			return false;
 
-		newVersion = root.get("version", "").asString("");
-		newVersionCode = root.get("version-code", 0).asInt(0);
+		std::string version = root.get("version", "").asString("");
+		int versionCode = root.get("version-code", 0).asInt(0);
+
+		std::vector<std::string> changelog;
 		for (Json::Value log : root["changelog"])
-			newChangelog.push_back(log.asString(""));
+			changelog.push_back(log.asString(""));
+
+		if (versionCode != VERSION_CODE)
+		{
+			if (versionCode > VERSION_CODE)
+				localPlayer->sendMessage("[SM] 새로운 버전이 있습니다 : v" + version);
+			else
+				localPlayer->sendMessage("[SM] 현재 개발 버전을 사용중입니다.");
+		}
 	}
 	return true;
-}
-
-void Server::setVanillaCommands()
-{
-}
-
-void Server::loadPlugin(Plugin *plugin)
-{
-	pluginManager->enablePlugin(plugin);
 }

@@ -27,7 +27,7 @@ CommandMap::CommandMap()
 
 CommandMap::~CommandMap()
 {
-	for (int i = 0; i < commands.size(); ++i)
+	for (size_t i = 0; i < commands.size(); ++i)
 		delete commands[i];
 
 	knownCommands.clear();
@@ -116,7 +116,7 @@ bool CommandMap::registerCommand(const std::string &label, Command *command, boo
 	return true;
 }
 
-bool CommandMap::dispatch(SMPlayer *sender, const std::string &cmdLine)
+bool CommandMap::dispatch(CommandSender *sender, const std::string &cmdLine)
 {
 	std::vector<std::string> args = SMUtil::split(cmdLine, ' ');
 	if (args.empty())
@@ -136,11 +136,11 @@ bool CommandMap::dispatch(SMPlayer *sender, const std::string &cmdLine)
 
 void CommandMap::clearCommands()
 {
-	for (auto &it : knownCommands)
-		it.second->unregister(this);
+	for (auto it = knownCommands.begin(); it != knownCommands.end(); ++it)
+		it->second->unregister(this);
 
-	for (Command *cmd : commands)
-		delete cmd;
+	for (size_t i = 0; i < commands.size(); ++i)
+		delete commands[i];
 
 	knownCommands.clear();
 	commands.clear();

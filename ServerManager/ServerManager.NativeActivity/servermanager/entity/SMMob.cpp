@@ -1,5 +1,5 @@
 #include "SMMob.h"
-#include "minecraftpe/entity/Mob.h"
+#include "minecraftpe/world/entity/Mob.h"
 
 SMMob::SMMob(Server *server, Mob *entity)
 	: SMEntity(server, entity)
@@ -23,7 +23,7 @@ int SMMob::getMaxHealth() const
 
 bool SMMob::teleport(const Location &location, PlayerTeleportEvent::TeleportCause cause)
 {
-	if(getHealth() <= 0)
+	if (getHealth() <= 0)
 		return false;
 
 	return SMEntity::teleport(location, cause);

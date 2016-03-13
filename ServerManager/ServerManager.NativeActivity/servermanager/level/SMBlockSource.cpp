@@ -1,8 +1,8 @@
 #include "SMBlockSource.h"
 #include "../entity/SMEntity.h"
-#include "minecraftpe/entity/ItemEntity.h"
-#include "minecraftpe/level/BlockSource.h"
-#include "minecraftpe/level/Level.h"
+#include "minecraftpe/world/entity/item/ItemEntity.h"
+#include "minecraftpe/world/level/BlockSource.h"
+#include "minecraftpe/world/level/Level.h"
 
 SMBlockSource::SMBlockSource(SMEntity *entity)
 {

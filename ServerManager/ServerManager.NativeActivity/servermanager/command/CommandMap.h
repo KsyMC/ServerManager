@@ -5,7 +5,7 @@
 #include <map>
 
 class Command;
-class SMPlayer;
+class CommandSender;
 
 class CommandMap
 {
@@ -25,7 +25,7 @@ public:
 	bool registerCommand(const std::string &label, const std::string &fallbackPrefix, Command *command);
 	bool registerCommand(const std::string &label, Command *command, bool isAlias, const std::string &fallbackPrefix);
 
-	bool dispatch(SMPlayer *sender, const std::string &cmdLine);
+	bool dispatch(CommandSender *sender, const std::string &cmdLine);
 
 	void clearCommands();
 

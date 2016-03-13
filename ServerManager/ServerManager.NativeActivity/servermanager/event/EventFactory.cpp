@@ -3,12 +3,12 @@
 
 #include "../ServerManager.h"
 #include "../block/SMBlock.h"
-#include "../entity/SMPlayer.h"
+#include "../entity/player/SMPlayer.h"
 #include "EventFactory.h"
 #include "../plugin/PluginManager.h"
-#include "minecraftpe/item/ItemInstance.h"
-#include "minecraftpe/entity/player/Player.h"
-#include "minecraftpe/level/BlockSource.h"
+#include "minecraftpe/world/item/ItemInstance.h"
+#include "minecraftpe/world/entity/player/Player.h"
+#include "minecraftpe/world/level/BlockSource.h"
 
 std::unique_ptr<PlayerInteractEvent> EventFactory::callPlayerInteractEvent(Player *who, Action action, ItemInstance *itemInHand)
 {

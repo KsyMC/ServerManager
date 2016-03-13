@@ -1,41 +1,50 @@
 #include "KickCommand.h"
 #include "../../ServerManager.h"
-#include "../../entity/SMPlayer.h"
+#include "../../entity/player/SMPlayer.h"
 #include "../../util/SMUtil.h"
+#include "../../ChatColor.h"
 
 KickCommand::KickCommand()
 	: VanillaCommand("kick")
 {
 	description = "Removes the specified player from the server";
 	usageMessage = "%commands.kick.usage";
+	setPermission("servermanager.command.kick");
 }
 
-bool KickCommand::execute(SMPlayer *sender, std::string &label, std::vector<std::string> &args)
+bool KickCommand::execute(CommandSender *sender, std::string &label, std::vector<std::string> &args)
 {
-	if((int)args.size() < 1 || args[0].empty())
+	if (!testPermission(sender)) return true;
+
+	if ((int)args.size() < 1 || args[0].empty())
 	{
-		sender->sendTranslation("§c%commands.generic.usage", {usageMessage});
+		sender->sendTranslation(ChatColor::RED + "%commands.generic.usage", { usageMessage });
 		return false;
 	}
 
 	SMPlayer *player = ServerManager::getPlayer(args[0]);
-	std::string reason;
-
-	args.erase(args.begin());
-	reason = SMUtil::trim(SMUtil::join(args, " "));
-
-	if(!player)
+	if (!player)
 	{
-		sender->sendTranslation("§c%commands.generic.player.notFound", {});
+		sender->sendTranslation(ChatColor::RED + "%commands.generic.player.notFound", {});
 		return true;
 	}
 
-	if(!reason.empty())
-		Command::broadcastCommandTranslation(sender, "commands.kick.success.reason", {player->getName(), reason});
-	else
-		Command::broadcastCommandTranslation(sender, "commands.kick.success", {player->getName()});
+	std::string reason;
 
-	ServerManager::kickPlayer(player, reason);
+	if (!reason.empty())
+		Command::broadcastCommandTranslation(sender, "commands.kick.success.reason", { player->getName(), reason });
+	else
+		Command::broadcastCommandTranslation(sender, "commands.kick.success", { player->getName() });
+
+	if ((int)args.size() > 1)
+	{
+		args.erase(args.begin());
+		reason = SMUtil::trim(SMUtil::join(args, " "));
+	}
+	else
+		reason = "Kicked by an operator.";
+
+	player->kick(reason);
 
 	return true;
 }

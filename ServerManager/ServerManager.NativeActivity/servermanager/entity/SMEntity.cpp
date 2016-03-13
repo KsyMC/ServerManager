@@ -1,23 +1,23 @@
 #include "SMEntity.h"
-#include "../entity/SMPlayer.h"
+#include "../entity/player/SMPlayer.h"
 #include "../level/SMBlockSource.h"
-#include "../entity/SMChicken.h"
-#include "../entity/SMCow.h"
-#include "../entity/SMMushroomCow.h"
-#include "../entity/SMPig.h"
-#include "../entity/SMSheep.h"
-#include "../entity/SMChicken.h"
-#include "../entity/SMZombie.h"
-#include "../entity/SMCreeper.h"
-#include "../entity/SMEnderman.h"
-#include "../entity/SMSkeleton.h"
-#include "../entity/SMBlaze.h"
+#include "../entity/animal/SMChicken.h"
+#include "../entity/animal/SMCow.h"
+#include "../entity/animal/SMMushroomCow.h"
+#include "../entity/animal/SMPig.h"
+#include "../entity/animal/SMSheep.h"
+#include "../entity/animal/SMChicken.h"
+#include "../entity/monster/SMZombie.h"
+#include "../entity/monster/SMCreeper.h"
+#include "../entity/monster/SMEnderman.h"
+#include "../entity/monster/SMSkeleton.h"
+#include "../entity/monster/SMBlaze.h"
 #include "../entity/SMWaterMob.h"
-#include "../entity/SMArrow.h"
-#include "../entity/SMBoat.h"
-#include "../entity/SMItemEntity.h"
-#include "minecraftpe/entity/Entity.h"
-#include "minecraftpe/entity/EntityClassTree.h"
+#include "../entity/projectile/SMArrow.h"
+#include "../entity/item/SMBoat.h"
+#include "../entity/item/SMItemEntity.h"
+#include "minecraftpe/world/entity/Entity.h"
+#include "minecraftpe/world/entity/EntityClassTree.h"
 
 SMEntity::SMEntity(Server *server, Entity *entity)
 {
@@ -190,7 +190,7 @@ Location &SMEntity::getLocation(Location &loc) const
 	return loc;
 }
 
-Vec3 &SMEntity::getVelocity() const
+const Vec3 &SMEntity::getVelocity() const
 {
 	return entity->getVelocity();
 }

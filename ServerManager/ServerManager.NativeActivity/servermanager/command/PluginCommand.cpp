@@ -1,5 +1,5 @@
 #include "PluginCommand.h"
-#include "../entity/SMPlayer.h"
+#include "../entity/player/SMPlayer.h"
 #include "CommandExecutor.h"
 #include "../plugin/Plugin.h"
 #include "../util/SMUtil.h"
@@ -11,25 +11,25 @@ PluginCommand::PluginCommand(const std::string &name, Plugin *owner)
 	this->owningPlugin = owner;
 }
 
-bool PluginCommand::execute(SMPlayer *sender, std::string &label, std::vector<std::string> &args)
+bool PluginCommand::execute(CommandSender *sender, std::string &label, std::vector<std::string> &args)
 {
 	bool success = false;
 
-	if(!owningPlugin->isEnabled())
+	if (!owningPlugin->isEnabled())
 		return false;
 
 	success = executor->onCommand(sender, this, label, args);
 
-	if(!success && usageMessage.length() > 0)
+	if (!success && usageMessage.length() > 0)
 	{
 		std::string newUsage = usageMessage;
-		if(newUsage.find("<command>") != std::string::npos)
+		if (newUsage.find("<command>") != std::string::npos)
 		{
 			std::string findString = "<command>";
 			newUsage.replace(newUsage.find(findString), findString.length(), label);
 		}
 
-		for(std::string line : SMUtil::split(newUsage, '\n'))
+		for (std::string line : SMUtil::split(newUsage, '\n'))
 			sender->sendMessage(line);
 	}
 

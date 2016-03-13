@@ -1,22 +1,25 @@
 #include "BanCommand.h"
 #include "../../ServerManager.h"
 #include "../../BanList.h"
-#include "../../entity/SMPlayer.h"
-#include "../../util/SMUtil.h"
+#include "../../entity/player/SMPlayer.h"
 #include "../../level/SMLevel.h"
+#include "../../util/SMUtil.h"
+#include "../../ChatColor.h"
 
 BanCommand::BanCommand()
 	: VanillaCommand("ban")
 {
 	description = "Prevents the specified player from using this server";
 	usageMessage = "%commands.ban.usage";
+	setPermission("servermanager.command.ban.player");
 }
 
-bool BanCommand::execute(SMPlayer *sender, std::string &label, std::vector<std::string> &args)
+bool BanCommand::execute(CommandSender *sender, std::string &label, std::vector<std::string> &args)
 {
-	if(args.empty())
+	if (!testPermission(sender)) return true;
+	if (args.empty())
 	{
-		sender->sendTranslation("§c%commands.generic.usage", {usageMessage});
+		sender->sendTranslation(ChatColor::RED + "%commands.generic.usage", { usageMessage });
 		return false;
 	}
 
@@ -27,11 +30,11 @@ bool BanCommand::execute(SMPlayer *sender, std::string &label, std::vector<std::
 
 	ServerManager::getBanList(BanList::NAME)->addBan(name, reason, sender->getName());
 
-	Command::broadcastCommandTranslation(sender, "commands.ban.success", {name});
+	Command::broadcastCommandTranslation(sender, "commands.ban.success", { name });
 
 	SMPlayer *player = ServerManager::getPlayerExact(name);
-	if(player)
-		ServerManager::kickPlayer(player, "Banned by admin.");
+	if (player)
+		player->kick("Banned by admin.");
 
 	return true;
 }

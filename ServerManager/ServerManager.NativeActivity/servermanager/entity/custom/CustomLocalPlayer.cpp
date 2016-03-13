@@ -2,9 +2,9 @@
 
 #include "CustomLocalPlayer.h"
 #include "../../ServerManager.h"
-#include "minecraftpe/client/MinecraftClient.h"
-#include "minecraftpe/entity/player/LocalPlayer.h"
-#include "minecraftpe/level/Level.h"
+#include "minecraftpe/client/game/MinecraftClient.h"
+#include "minecraftpe/client/player/LocalPlayer.h"
+#include "minecraftpe/world/level/Level.h"
 #include "Substrate.h"
 
 void(*CustomLocalPlayer::constructor_real)(LocalPlayer *real, MinecraftClient *client, Level &level, const User &user, GameType gameType, const RakNet::RakNetGUID &guid, mce::UUID uuid);

@@ -11,11 +11,8 @@ SMOptions::SMOptions(const std::string &file)
 	serverName = "A Minecraft PE Server";
 	serverPort = 19132;
 	serverPlayers = 4;
-
 	viewDistance = 10;
-
 	whitelist = false;
-
 	pvpMode = false;
 
 	version = 0;
@@ -48,7 +45,7 @@ void SMOptions::load(const std::string &path)
 		if(s.size() > 2)
 		{
 			s.erase(s.begin());
-			for(int i = 0; i < s.size(); i++)
+			for(size_t i = 0; i < s.size(); i++)
 				value += ":" + s[i];
 		}
 
@@ -98,6 +95,8 @@ void SMOptions::checkOldOptions(const std::string &key, const std::string &value
 		}
 		break;
 	case STATE_DOWNGRADE:
+		break;
+	case STATE_NOUPDATE:
 		break;
 	}
 }

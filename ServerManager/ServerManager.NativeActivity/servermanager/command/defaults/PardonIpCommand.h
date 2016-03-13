@@ -7,5 +7,5 @@ class PardonIpCommand : public VanillaCommand
 public:
 	PardonIpCommand();
 
-	bool execute(SMPlayer *player, std::string &label, std::vector<std::string> &args);
+	bool execute(CommandSender *sender, std::string &label, std::vector<std::string> &args);
 };

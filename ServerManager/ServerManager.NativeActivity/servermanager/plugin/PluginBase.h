@@ -40,7 +40,7 @@ public:
 
 	void init(Server *server, PluginDescriptionFile *description, const std::string &dataFolder);
 
-	bool onCommand(SMPlayer *sender, Command *command, std::string &label, std::vector<std::string> &args);
+	bool onCommand(CommandSender *sender, Command *command, std::string &label, std::vector<std::string> &args);
 
 	PluginCommand *getCommand(std::string &name);
 };

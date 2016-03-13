@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../Event.h"
-#include "minecraftpe/entity/EntityType.h"
+#include "minecraftpe/world/entity/EntityType.h"
 
 class SMEntity;
 
